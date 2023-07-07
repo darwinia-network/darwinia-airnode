@@ -108,7 +108,7 @@
             "apiSpecifications": {
                 "servers": [
                     {
-                        "url": "${YOUR_API_PROVIDER}"
+                        "url": "${API_PROVIDER}"
                     }
                 ],
                 "paths": {
