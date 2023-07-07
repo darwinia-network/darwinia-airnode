@@ -10,13 +10,13 @@
 ### Deploy Cloud
 
 ```
-./scripts/deploy-cloud.sh pangolin
+./scripts/deploy-cloud.sh
 ```
 
 ### Remove Cloud
 
 ```
-./scripts/remove-cloud.sh pangolin
+./scripts/remove-cloud.sh
 ```
 
 ### Deploy Local
