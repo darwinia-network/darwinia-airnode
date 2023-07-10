@@ -18,8 +18,6 @@
 3. Choose an API provider, such as [Infura](https://app.infura.io/dashboard) or [Alchemy](https://dashboard.alchemy.com/), and then create an API key.
 Here we need the Arbitrum mainnet and Arbitrum Goerli API. And then set it in `secrets.env`
 
-4. Set `CLOUD_PROVIDER=gcp` in secrets.env
-
 ## Deploy
 
 ### Deploy via GCP
@@ -43,7 +41,9 @@ darwinia-airnode
 
 5. Once the new service account is created, click on it to bring up its management page. Select the KEYS tab and add a new access key of type JSON for this account. Download the key file and place in the root of the `/darwinia-airnode` project directory. Rename it gcp.json.
 
-6. Deploy
+6. Set `CLOUD_PROVIDER=gcp` in secrets.env
+
+7. Deploy
 
     ```shell
     ./scripts/deploy-cloud.sh
@@ -51,7 +51,7 @@ darwinia-airnode
 
     Save the HTTP gateway URL, and we can test the airnode by it.
 
-7. Save the receipt.json, this file is used to remove the Airnode.
+8. Save the receipt.json, this file is used to remove the Airnode.
 
 ### Deploy via AWS
 
