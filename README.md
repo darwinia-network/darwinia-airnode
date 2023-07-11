@@ -27,6 +27,7 @@ Project folder
 ```shell
 darwinia-airnode
 ├── config.json
+├── gcp.json
 ├── secrets.env
 └── scripts
 ```
@@ -41,7 +42,7 @@ darwinia-airnode
 
 5. Once the new service account is created, click on it to bring up its management page. Select the KEYS tab and add a new access key of type JSON for this account. Download the key file and place in the root of the `/darwinia-airnode` project directory. Rename it gcp.json.
 
-6. Set `CLOUD_PROVIDER=gcp` in secrets.env
+6. Set `CLOUD_PROVIDER=gcp` in secrets.env also update `region` and `projectId` fields.
 
 7. Deploy
 
@@ -65,14 +66,14 @@ darwinia-airnode
 └── scripts
 ```
 
-1. Add the access credentials in `aws.env` from your AWS account. If you donot have an account watch this [video➚](https://www.youtube.com/watch?v=KngM5bfpttA) to create one.
+1. Add the access credentials in `aws.env` from your AWS account. If you don't have an account watch this [video➚](https://www.youtube.com/watch?v=KngM5bfpttA) to create one.
 
     ```shell
     AWS_ACCESS_KEY_ID: Is ACCESS_KEY_ID in IAM.
     AWS_SECRET_ACCESS_KEY: Is SECRET_ACCESS_KEY in IAM.
     ```
 
-2. Set `CLOUD_PROVIDER=aws` in secrets.env
+2. Set `CLOUD_PROVIDER=aws` in secrets.env also update `region` field.
 
 3. Deploy
 
