@@ -3,4 +3,4 @@ logs/**
 
 *.env
 *.local.*
-config.json
+/*.json
