@@ -27,11 +27,11 @@ env | while read -r line
 do
   KEY=$(echo $line | cut -d '=' -f 1)
   VALUE=$(echo $line | cut -d '=' -f 2-)
-  if [[ "${KEY}" == _* ]]; then
+  if [[ "${KEY}" == I_* ]]; then
     sed -i "s#\${${KEY}}#${VALUE}#g" ${CONFIG_TARGET_FILE}
   fi
 done
 
-sed -i -E "s/\\$\{\_.*}//g" ${CONFIG_TARGET_FILE}
+sed -i -E "s/\\$\{I\_.*}//g" ${CONFIG_TARGET_FILE}
 
 
