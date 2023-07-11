@@ -6,7 +6,7 @@ BIN_PATH=$(cd "$(dirname "$0")"; pwd -P)
 WORK_PATH=${BIN_PATH}/../
 
 
-CONFIG_EXAMPLE_FILE=${WORK_PATH}/config.example.json
+CONFIG_EXAMPLE_FILE=${WORK_PATH}/config.json.example
 CONFIG_TARGET_FILE=${WORK_PATH}/config.json
 SECRETS_ENV=${WORK_PATH}/secrets.env
 
