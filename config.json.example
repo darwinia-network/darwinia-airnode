@@ -231,11 +231,11 @@
             "apiSpecifications": {
                 "servers": [
                     {
-                        "url": "${_ARBITRUM_MAINNET_API}"
+                        "url": "${ARBITRUM_MAINNET_API}"
                     }
                 ],
                 "paths": {
-                    "/${_ARBITRUM_MAINNET_API_KEY}": {
+                    "/${I_ARBITRUM_MAINNET_API_KEY}": {
                         "post": {
                             "parameters": [
                                 {
@@ -272,7 +272,7 @@
                     "name": "ArbitrumBlock",
                     "operation": {
                         "method": "post",
-                        "path": "/${_ARBITRUM_MAINNET_API_KEY}"
+                        "path": "/${I_ARBITRUM_MAINNET_API_KEY}"
                     },
                     "fixedOperationParameters": [
                         {
@@ -335,11 +335,11 @@
             "apiSpecifications": {
                 "servers": [
                     {
-                        "url": "${_ARBITRUM_GOERLI_API}"
+                        "url": "${ARBITRUM_GOERLI_API}"
                     }
                 ],
                 "paths": {
-                    "/${_ARBITRUM_GOERLI_API_KEY}": {
+                    "/${I_ARBITRUM_GOERLI_API_KEY}": {
                         "post": {
                             "parameters": [
                                 {
@@ -376,7 +376,7 @@
                     "name": "ArbitrumGoerliBlock",
                     "operation": {
                         "method": "post",
-                        "path": "/${_ARBITRUM_GOERLI_API_KEY}"
+                        "path": "/${I_ARBITRUM_GOERLI_API_KEY}"
                     },
                     "fixedOperationParameters": [
                         {
