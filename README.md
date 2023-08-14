@@ -124,11 +124,10 @@ npx @api3/airnode-admin sponsor-requester \
 ### Derive sponsor wallet
 
 ```shell
-npx @api3/airnode-admin sponsor-requester \
- --providerUrl <Network RPC> \
- --sponsor-mnemonic "${PRIVATE_MNEMONIC}" \
- --requester-address <REQUESTER CONTRACT ADDRESS> \
- --airnode-rrp-address <RRP CONTRACT ADDRESS>
+npx @api3/airnode-admin derive-sponsor-wallet-address \
+  --airnode-xpub <AIRNODE XPUB ADDRESS> \
+  --airnode-address <AIRNODE PUB ADDRESS> \
+  --sponsor-address <SPONSOR PUB ADDRESS>
 ```
 
 > Sponsor wallet address: 0x1234...
