@@ -100,3 +100,35 @@ When an Airnode was deployed using the deploy command, a receipt.json file was c
     ```shell
     ./scripts/deploy-local.sh
     ```
+
+## Sponsor
+
+### Install airnode-admin-cli
+
+1. npm install npx
+2. npm install @api3/airnode-admin
+3. export PRIVATE_MNEMONIC="YOUR WALLET MNEMONIC"
+
+### Sponsor requester
+
+```shell
+npx @api3/airnode-admin sponsor-requester \
+ --providerUrl <Network RPC> \
+ --sponsor-mnemonic "${PRIVATE_MNEMONIC}" \
+ --requester-address <REQUESTER CONTRACT ADDRESS> \
+ --airnode-rrp-address <RRP CONTRACT ADDRESS>
+```
+
+> Requester address 0x1234... is now sponsored by 0x456...
+
+### Derive sponsor wallet
+
+```shell
+npx @api3/airnode-admin sponsor-requester \
+ --providerUrl <Network RPC> \
+ --sponsor-mnemonic "${PRIVATE_MNEMONIC}" \
+ --requester-address <REQUESTER CONTRACT ADDRESS> \
+ --airnode-rrp-address <RRP CONTRACT ADDRESS>
+```
+
+> Sponsor wallet address: 0x1234...
