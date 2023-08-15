@@ -147,3 +147,7 @@ Pangolin: `0x6084A81dB23169F8a7BB5fa67C8a78ff9abA9819`
 ### Other Networks
 
 <https://docs.api3.org/reference/airnode/latest/>
+
+## Request to join dAPI
+
+[New Application](https://github.com/darwinia-oracle-dao/airnode-dapi/issues/new?assignees=hujw77&labels=application&projects=&template=airnode_application.yml&title=%5BApplication%5D%3A+%3Ctitle%3E)
