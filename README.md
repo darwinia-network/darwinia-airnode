@@ -131,3 +131,13 @@ npx @api3/airnode-admin derive-sponsor-wallet-address \
 ```
 
 > Sponsor wallet address: 0x1234...
+
+## RRP Contract Addresses
+
+### Darwinia Network
+
+Pangolin: `0x6084A81dB23169F8a7BB5fa67C8a78ff9abA9819`
+
+### Other Networks
+
+<https://docs.api3.org/reference/airnode/latest/>
