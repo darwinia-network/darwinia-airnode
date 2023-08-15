@@ -20,6 +20,10 @@ Here we need the Arbitrum mainnet and Arbitrum Goerli API. And then set it in `s
 
 ## Deploy
 
+### Install jq
+
+For Ubuntu or Debian: `apt install jq`
+
 ### Deploy via GCP
 
 Project folder
@@ -95,7 +99,9 @@ When an Airnode was deployed using the deploy command, a receipt.json file was c
 
 ### Deploy Local
 
-1. Set CLOUD_PROVIDER=local in secrets.env
+1. Install Docker
+
+2. Set CLOUD_PROVIDER=local in secrets.env
 
     ```shell
     ./scripts/deploy-local.sh
