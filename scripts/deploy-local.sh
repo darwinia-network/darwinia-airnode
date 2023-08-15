@@ -7,7 +7,9 @@ WORK_PATH=${BIN_PATH}/../
 
 ${BIN_PATH}/generate-config.sh
 
-docker run --rm -it \
+docker stop quick-start-container-airnode || true
+docker rm quick-start-container-airnode || true
+docker run -dit \
   --volume "${WORK_PATH}:/app/config" \
   --name quick-start-container-airnode \
   --network host \
