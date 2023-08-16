@@ -119,7 +119,7 @@ When an Airnode was deployed using the deploy command, a receipt.json file was c
 
 ```shell
 npx @api3/airnode-admin sponsor-requester \
- --providerUrl <Network RPC> \
+ --provider-url <Network RPC> \
  --sponsor-mnemonic "${PRIVATE_MNEMONIC}" \
  --requester-address <REQUESTER CONTRACT ADDRESS> \
  --airnode-rrp-address <RRP CONTRACT ADDRESS>
