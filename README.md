@@ -18,6 +18,13 @@
 3. Choose an API provider, such as [Infura](https://app.infura.io/dashboard) or [Alchemy](https://dashboard.alchemy.com/), and then create an API key.
 Here we need the Arbitrum mainnet and Arbitrum Goerli API. And then set it in `secrets.env`
 
+4. If you forgot to save your xpub address, you can generate it with this command
+
+    ```shell
+    npx @api3/airnode-admin derive-airnode-address \
+    --airnode-mnemonic "cricket elephant ..."
+    ```
+
 ## Deploy
 
 ### Install jq
