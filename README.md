@@ -21,7 +21,7 @@ Here we need the Arbitrum mainnet and Arbitrum Goerli API. And then set it in `s
 4. If you forgot to save your xpub address, you can generate it with this command
 
     ```shell
-    npx @api3/airnode-admin derive-airnode-address \
+    npx @api3/airnode-admin derive-airnode-xpub \
     --airnode-mnemonic "cricket elephant ..."
     ```
 
