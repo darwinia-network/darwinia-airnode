@@ -162,3 +162,42 @@ Arbitrum Goerli: `0xa0AD79D995DdeeB18a14eAef56A549A04e3Aa1Bd`
 ## Request to join dAPI
 
 [New Application](https://github.com/darwinia-oracle-dao/airnode-dapi/issues/new?assignees=hujw77&labels=application&projects=&template=airnode_application.yml&title=%5BApplication%5D%3A+%3Ctitle%3E)
+
+## Check
+
+### Check API
+
+1. Check Pangolin Message Root:
+
+    ```bash
+    curl -X POST -H 'Content-Type: application/json' http://localhost:3000/http-data/01234567-abcd-abcd-abcd-012345678abc/0x23e5743c946604a779a5181a1bf621076cd11687a1f21c8bc2fa483bd704b3ab -d '{"parameters": {}}'
+
+    # Example Result: {"rawValue":{"jsonrpc":"2.0","result":"0x23f8521e1830f581a286fd08b2cbab9055fb904f8ee727d54cfedcf1905a3897","id":"1"},"encodedValue":"0x23f8521e1830f581a286fd08b2cbab9055fb904f8ee727d54cfedcf1905a3897","values":["0x23f8521e1830f581a286fd08b2cbab9055fb904f8ee727d54cfedcf1905a3897"]}
+    ```
+
+2. Check ArbitrumGoerli Message Root:
+
+    ```bash
+    curl -X POST -H 'Content-Type: application/json' http://localhost:3000/http-data/01234567-abcd-abcd-abcd-012345678abc/0xe7fe8a321e9c000326638d5187a650e3f9d0652f30a01ad9ae4a60327e6c5277 -d '{"parameters": {}}'
+
+    # Example Result: {"rawValue":{"jsonrpc":"2.0","result":"0x23f8521e1830f581a286fd08b2cbab9055fb904f8ee727d54cfedcf1905a3897","id":"1"},"encodedValue":"0x23f8521e1830f581a286fd08b2cbab9055fb904f8ee727d54cfedcf1905a3897","values":["0x23f8521e1830f581a286fd08b2cbab9055fb904f8ee727d54cfedcf1905a3897"]}
+    ```
+
+### Check Sponsor
+
+1. Check on Pangolin
+
+    ```bash
+    # Replace <SPONSOR_ADDRESS> with your sponsor address without '0x'. For example: 9F33a4809aA708d7a399fedBa514e0A0d15EfA85
+    curl -fsS https://pangolin-rpc.darwinia.network/ -d '{"id":1,"jsonrpc":"2.0","method":"eth_call","params":[{"data":"0xa81e9f79000000000000000000000000<SPONSOR_ADDRESS>000000000000000000000000770713580e5c618a4d29d7e8c0d7604276b63832","from":"0x0f14341A7f464320319025540E8Fe48Ad0fe5aec","gas":"0x1312d00","to":"0x6084A81dB23169F8a7BB5fa67C8a78ff9abA9819"},"latest"]}' -H 'Content-Type: application/json'
+
+    # Result should be: {"jsonrpc":"2.0","result":"0x0000000000000000000000000000000000000000000000000000000000000001","id":1}
+    ```
+
+2. Check on ArbitrumGoerli
+
+    ```bash
+    # Replace <SPONSOR_ADDRESS> with your sponsor address without '0x'. For example: 9F33a4809aA708d7a399fedBa514e0A0d15EfA85
+    curl -fsS https://rpc.goerli.arbitrum.gateway.fm -d '{"id":1,"jsonrpc":"2.0","method":"eth_call","params":[{"data":"0xa81e9f79000000000000000000000000<SPONSOR_ADDRESS>000000000000000000000000a681492DBAd5a3999cFCE2d72196d5784dd08D0c","from":"0x0f14341A7f464320319025540E8Fe48Ad0fe5aec","gas":"0x1312d00","to":"0xa0AD79D995DdeeB18a14eAef56A549A04e3Aa1Bd"},"latest"]}' -H 'Content-Type: application/json'
+    # Result should be: {"jsonrpc":"2.0","result":"0x0000000000000000000000000000000000000000000000000000000000000001","id":1}
+    ```
