@@ -200,5 +200,6 @@ Arbitrum Goerli: `0xa0AD79D995DdeeB18a14eAef56A549A04e3Aa1Bd`
     ```bash
     # Replace <SPONSOR_ADDRESS> with your sponsor address without '0x'. For example: 9F33a4809aA708d7a399fedBa514e0A0d15EfA85
     curl -fsS https://rpc.goerli.arbitrum.gateway.fm -d '{"id":1,"jsonrpc":"2.0","method":"eth_call","params":[{"data":"0xa81e9f79000000000000000000000000<SPONSOR_ADDRESS>000000000000000000000000a681492DBAd5a3999cFCE2d72196d5784dd08D0c","from":"0x0f14341A7f464320319025540E8Fe48Ad0fe5aec","gas":"0x1312d00","to":"0xa0AD79D995DdeeB18a14eAef56A549A04e3Aa1Bd"},"latest"]}' -H 'Content-Type: application/json'
+    
     # Result should be: {"jsonrpc":"2.0","result":"0x0000000000000000000000000000000000000000000000000000000000000001","id":1}
     ```
