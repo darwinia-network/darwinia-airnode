@@ -64,71 +64,12 @@
                 "requesterEndpointAuthorizations": {}
             },
             "contracts": {
-                "AirnodeRrp": "0x6084A81dB23169F8a7BB5fa67C8a78ff9abA9819"
+                "AirnodeRrp": "0xa0AD79D995DdeeB18a14eAef56A549A04e3Aa1Bd"
             },
-            "id": "44",
+            "id": "421613",
             "providers": {
-                "darwiniaHostedCrab": {
-                    "url": "https://crab-rpc.darwinia.network"
-                },
-                "dwellirCrab": {
-                    "url": "https://darwiniacrab-rpc.dwellir.com"
-                }
-            },
-            "type": "evm",
-            "options": {
-                "fulfillmentGasLimit": 500000,
-                "gasPriceOracle": [
-                    {
-                        "gasPriceStrategy": "latestBlockPercentileGasPrice",
-                        "percentile": 60,
-                        "minTransactionCount": 20,
-                        "pastToCompareInBlocks": 20,
-                        "maxDeviationMultiplier": 2
-                    },
-                    {
-                        "gasPriceStrategy": "providerRecommendedGasPrice",
-                        "recommendedGasPriceMultiplier": 1.2
-                    },
-                    {
-                        "gasPriceStrategy": "providerRecommendedEip1559GasPrice",
-                        "baseFeeMultiplier": 2,
-                        "priorityFee": {
-                            "value": 3.12,
-                            "unit": "gwei"
-                        }
-                    },
-                    {
-                        "gasPriceStrategy": "constantGasPrice",
-                        "gasPrice": {
-                            "value": 10,
-                            "unit": "gwei"
-                        }
-                    }
-                ]
-            },
-            "maxConcurrency": 100
-        },
-        {
-            "authorizers": {
-                "requesterEndpointAuthorizers": [],
-                "crossChainRequesterAuthorizers": [],
-                "requesterAuthorizersWithErc721": [],
-                "crossChainRequesterAuthorizersWithErc721": []
-            },
-            "authorizations": {
-                "requesterEndpointAuthorizations": {}
-            },
-            "contracts": {
-                "AirnodeRrp": "0x6084A81dB23169F8a7BB5fa67C8a78ff9abA9819"
-            },
-            "id": "46",
-            "providers": {
-                "darwiniaHostedDarwinia": {
-                    "url": "https://rpc.darwinia.network"
-                },
-                "dwellirDarwinia": {
-                    "url": "https://darwinia-rpc.dwellir.com"
+                "ArbitrumGoerli": {
+                    "url": "${ARBITRUM_GOERLI_API}/${ARBITRUM_GOERLI_API_KEY}"
                 }
             },
             "type": "evm",
@@ -196,28 +137,28 @@
     "triggers": {
         "rrp": [
             {
-                "endpointId": "0xdf7a4a56f9574d948109049b11380c4a16508e9501e2c9a87161735a6b3cb068",
-                "oisTitle": "Arbitrum Block Info",
-                "endpointName": "ArbitrumBlock",
+                "endpointId": "0x23e5743c946604a779a5181a1bf621076cd11687a1f21c8bc2fa483bd704b3ab",
+                "oisTitle": "Pangolin Message Root",
+                "endpointName": "PangolinMessageRoot",
                 "cacheResponses": false
             },
             {
-                "endpointId": "0x59f65bf62a94ba204b81e77bef07d3417fc97477691cd8d7d2bea1bf72214a6f",
-                "oisTitle": "Arbitrum Goerli Block Info",
-                "endpointName": "ArbitrumGoerliBlock",
+                "endpointId": "0xe7fe8a321e9c000326638d5187a650e3f9d0652f30a01ad9ae4a60327e6c5277",
+                "oisTitle": "Arbitrum Goerli Message Root",
+                "endpointName": "ArbitrumGoerliMessageRoot",
                 "cacheResponses": false
             }
         ],
         "http": [
             {
-                "endpointId": "0xdf7a4a56f9574d948109049b11380c4a16508e9501e2c9a87161735a6b3cb068",
-                "oisTitle": "Arbitrum Block Info",
-                "endpointName": "ArbitrumBlock"
+                "endpointId": "0x23e5743c946604a779a5181a1bf621076cd11687a1f21c8bc2fa483bd704b3ab",
+                "oisTitle": "Pangolin Message Root",
+                "endpointName": "PangolinMessageRoot"
             },
             {
-                "endpointId": "0x59f65bf62a94ba204b81e77bef07d3417fc97477691cd8d7d2bea1bf72214a6f",
-                "oisTitle": "Arbitrum Goerli Block Info",
-                "endpointName": "ArbitrumGoerliBlock"
+                "endpointId": "0xe7fe8a321e9c000326638d5187a650e3f9d0652f30a01ad9ae4a60327e6c5277",
+                "oisTitle": "Arbitrum Goerli Message Root",
+                "endpointName": "ArbitrumGoerliMessageRoot"
             }
         ],
         "httpSignedData": []
@@ -226,111 +167,7 @@
     "ois": [
         {
             "oisFormat": "2.1.0",
-            "title": "Arbitrum Block Info",
-            "version": "1.0.0",
-            "apiSpecifications": {
-                "servers": [
-                    {
-                        "url": "${ARBITRUM_MAINNET_API}"
-                    }
-                ],
-                "paths": {
-                    "/${ARBITRUM_MAINNET_API_KEY}": {
-                        "post": {
-                            "parameters": [
-                                {
-                                    "in": "header",
-                                    "name": "Content-Type"
-                                },
-                                {
-                                    "in": "query",
-                                    "name": "method"
-                                },
-                                {
-                                    "in": "query",
-                                    "name": "id"
-                                },
-                                {
-                                    "in": "query",
-                                    "name": "jsonrpc"
-                                },
-                                {
-                                    "in": "query",
-                                    "name": "params"
-                                }
-                            ]
-                        }
-                    }
-                },
-                "components": {
-                    "securitySchemes": {}
-                },
-                "security": {}
-            },
-            "endpoints": [
-                {
-                    "name": "ArbitrumBlock",
-                    "operation": {
-                        "method": "post",
-                        "path": "/${ARBITRUM_MAINNET_API_KEY}"
-                    },
-                    "fixedOperationParameters": [
-                        {
-                            "operationParameter": {
-                                "in": "header",
-                                "name": "Content-Type"
-                            },
-                            "value": "application/json"
-                        },
-                        {
-                            "operationParameter": {
-                                "in": "query",
-                                "name": "method"
-                            },
-                            "value": "eth_getBlockByNumber"
-                        },
-                        {
-                            "operationParameter": {
-                                "in": "query",
-                                "name": "id"
-                            },
-                            "value": "1"
-                        },
-                        {
-                            "operationParameter": {
-                                "in": "query",
-                                "name": "jsonrpc"
-                            },
-                            "value": "2.0"
-                        },
-                        {
-                            "operationParameter": {
-                                "in": "query",
-                                "name": "params"
-                            },
-                            "value": [
-                                "finalized",
-                                false
-                            ]
-                        }
-                    ],
-                    "reservedParameters": [
-                        {
-                            "name": "_type",
-                            "fixed": "uint256,bytes32"
-                        },
-                        {
-                            "name": "_path",
-                            "fixed": "result.number,result.stateRoot"
-                        }
-                    ],
-                    "parameters": []
-                }
-            ]
-        },
-        {
-            "oisFormat": "2.1.0",
-            "title": "Arbitrum Goerli Block Info",
+            "title": "Arbitrum Goerli Message Root",
             "version": "1.0.0",
             "apiSpecifications": {
                 "servers": [
@@ -373,7 +210,7 @@
             },
             "endpoints": [
                 {
-                    "name": "ArbitrumGoerliBlock",
+                    "name": "ArbitrumGoerliMessageRoot",
                     "operation": {
                         "method": "post",
                         "path": "/${ARBITRUM_GOERLI_API_KEY}"
@@ -391,7 +228,7 @@
                                 "in": "query",
                                 "name": "method"
                             },
-                            "value": "eth_getBlockByNumber"
+                            "value": "eth_call"
                         },
                         {
                             "operationParameter": {
@@ -413,19 +250,133 @@
                                 "name": "params"
                             },
                             "value": [
-                                "finalized",
-                                false
+                                {
+                                    "data": "0xebf0c717",
+                                    "from": "0x0000000000BD9dcFDa5C60697039E2b3B28b079b",
+                                    "gas": "0x5b8d80",
+                                    "to": "0x0000000000BD9dcFDa5C60697039E2b3B28b079b"
+                                },
+                                "finalized"
                             ]
                         }
                     ],
                     "reservedParameters": [
                         {
                             "name": "_type",
-                            "fixed": "uint256,bytes32"
+                            "fixed": "bytes32"
                         },
                         {
                             "name": "_path",
-                            "fixed": "result.number,result.stateRoot"
+                            "fixed": "result"
+                        }
+                    ],
+                    "parameters": []
+                }
+            ]
+        },
+        {
+            "oisFormat": "2.1.0",
+            "title": "Pangolin Message Root",
+            "version": "1.0.0",
+            "apiSpecifications": {
+                "servers": [
+                    {
+                        "url": "https://pangolin-rpc.darwinia.network"
+                    }
+                ],
+                "paths": {
+                    "/": {
+                        "post": {
+                            "parameters": [
+                                {
+                                    "in": "header",
+                                    "name": "Content-Type"
+                                },
+                                {
+                                    "in": "query",
+                                    "name": "method"
+                                },
+                                {
+                                    "in": "query",
+                                    "name": "id"
+                                },
+                                {
+                                    "in": "query",
+                                    "name": "jsonrpc"
+                                },
+                                {
+                                    "in": "query",
+                                    "name": "params"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "components": {
+                    "securitySchemes": {}
+                },
+                "security": {}
+            },
+            "endpoints": [
+                {
+                    "name": "PangolinMessageRoot",
+                    "operation": {
+                        "method": "post",
+                        "path": "/"
+                    },
+                    "fixedOperationParameters": [
+                        {
+                            "operationParameter": {
+                                "in": "header",
+                                "name": "Content-Type"
+                            },
+                            "value": "application/json"
+                        },
+                        {
+                            "operationParameter": {
+                                "in": "query",
+                                "name": "method"
+                            },
+                            "value": "eth_call"
+                        },
+                        {
+                            "operationParameter": {
+                                "in": "query",
+                                "name": "id"
+                            },
+                            "value": "1"
+                        },
+                        {
+                            "operationParameter": {
+                                "in": "query",
+                                "name": "jsonrpc"
+                            },
+                            "value": "2.0"
+                        },
+                        {
+                            "operationParameter": {
+                                "in": "query",
+                                "name": "params"
+                            },
+                            "value": [
+                                {
+                                    "data": "0xebf0c717",
+                                    "from": "0x0000000000BD9dcFDa5C60697039E2b3B28b079b",
+                                    "gas": "0x5b8d80",
+                                    "to": "0x0000000000BD9dcFDa5C60697039E2b3B28b079b"
+                                },
+                                "finalized"
+                            ]
+                        }
+                    ],
+                    "reservedParameters": [
+                        {
+                            "name": "_type",
+                            "fixed": "bytes32"
+                        },
+                        {
+                            "name": "_path",
+                            "fixed": "result"
                         }
                     ],
                     "parameters": []

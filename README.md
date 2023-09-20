@@ -18,7 +18,18 @@
 3. Choose an API provider, such as [Infura](https://app.infura.io/dashboard) or [Alchemy](https://dashboard.alchemy.com/), and then create an API key.
 Here we need the Arbitrum mainnet and Arbitrum Goerli API. And then set it in `secrets.env`
 
+4. If you forgot to save your xpub address, you can generate it with this command
+
+    ```shell
+    npx @api3/airnode-admin derive-airnode-xpub \
+    --airnode-mnemonic "cricket elephant ..."
+    ```
+
 ## Deploy
+
+### Install jq
+
+For Ubuntu or Debian: `apt install jq`
 
 ### Deploy via GCP
 
@@ -95,8 +106,59 @@ When an Airnode was deployed using the deploy command, a receipt.json file was c
 
 ### Deploy Local
 
-1. Set CLOUD_PROVIDER=local in secrets.env
+1. Install Docker
+
+2. Set CLOUD_PROVIDER=local in secrets.env
 
     ```shell
     ./scripts/deploy-local.sh
     ```
+
+## Sponsor
+
+### Install airnode-admin-cli
+
+1. npm install npx
+2. npm install @api3/airnode-admin
+3. export PRIVATE_MNEMONIC="YOUR WALLET MNEMONIC"
+
+### Sponsor requester
+
+Please note that you need to run this command on each chain to sponsor different requester.
+
+```shell
+npx @api3/airnode-admin sponsor-requester \
+ --provider-url <Network RPC> \
+ --sponsor-mnemonic "${PRIVATE_MNEMONIC}" \
+ --requester-address <REQUESTER CONTRACT ADDRESS> \ # Get from dapi: <https://github.com/darwinia-oracle-dao/airnode-dapi/blob/main/bin/addr.json>
+ --airnode-rrp-address <RRP CONTRACT ADDRESS>   # Listed below. RRP Contract Addresses
+```
+
+> Requester address 0x1234... is now sponsored by 0x456...
+
+### Derive sponsor wallet
+
+```shell
+npx @api3/airnode-admin derive-sponsor-wallet-address \
+  --airnode-xpub <AIRNODE XPUB ADDRESS> \ # Refer to **Prerequisites** Part, Step 4
+  --airnode-address <AIRNODE PUB ADDRESS> \
+  --sponsor-address <SPONSOR PUB ADDRESS> # This is the public key corresponding to the mnemonic address you used in the previous step.
+```
+
+> Sponsor wallet address: 0x1234...
+
+## RRP Contract Addresses
+
+### Darwinia Network
+
+Pangolin: `0x6084A81dB23169F8a7BB5fa67C8a78ff9abA9819`
+
+### Other Networks
+
+<https://docs.api3.org/reference/airnode/latest/>
+
+Arbitrum Goerli: `0xa0AD79D995DdeeB18a14eAef56A549A04e3Aa1Bd`
+
+## Request to join dAPI
+
+[New Application](https://github.com/darwinia-oracle-dao/airnode-dapi/issues/new?assignees=hujw77&labels=application&projects=&template=airnode_application.yml&title=%5BApplication%5D%3A+%3Ctitle%3E)
