@@ -124,7 +124,8 @@ When an Airnode was deployed using the deploy command, a receipt.json file was c
 
 ### Sponsor requester
 
-Please note that you need to run this command on each chain to sponsor different requester.
+Please note that you need to run this command on each chain to sponsor different requester. Currently: Pangolin & ArbitrumGoerli
+And this command will submit a transaction, the sponsor-mnemonic wallet should have some token to pay the extrinsic fee.
 
 ```shell
 npx @api3/airnode-admin sponsor-requester \
