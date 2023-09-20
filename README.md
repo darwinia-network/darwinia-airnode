@@ -124,12 +124,14 @@ When an Airnode was deployed using the deploy command, a receipt.json file was c
 
 ### Sponsor requester
 
+Please note that you need to run this command on each chain to sponsor different requester.
+
 ```shell
 npx @api3/airnode-admin sponsor-requester \
  --provider-url <Network RPC> \
  --sponsor-mnemonic "${PRIVATE_MNEMONIC}" \
- --requester-address <REQUESTER CONTRACT ADDRESS> \
- --airnode-rrp-address <RRP CONTRACT ADDRESS>
+ --requester-address <REQUESTER CONTRACT ADDRESS> \ # Get from dapi: <https://github.com/darwinia-oracle-dao/airnode-dapi/blob/main/bin/addr.json>
+ --airnode-rrp-address <RRP CONTRACT ADDRESS>   # Listed below. RRP Contract Addresses
 ```
 
 > Requester address 0x1234... is now sponsored by 0x456...
@@ -138,9 +140,9 @@ npx @api3/airnode-admin sponsor-requester \
 
 ```shell
 npx @api3/airnode-admin derive-sponsor-wallet-address \
-  --airnode-xpub <AIRNODE XPUB ADDRESS> \
+  --airnode-xpub <AIRNODE XPUB ADDRESS> \ # Refer to **Prerequisites** Part, Step 4
   --airnode-address <AIRNODE PUB ADDRESS> \
-  --sponsor-address <SPONSOR PUB ADDRESS>
+  --sponsor-address <SPONSOR PUB ADDRESS> # This is the public key corresponding to the mnemonic address you used in the previous step.
 ```
 
 > Sponsor wallet address: 0x1234...
@@ -154,6 +156,8 @@ Pangolin: `0x6084A81dB23169F8a7BB5fa67C8a78ff9abA9819`
 ### Other Networks
 
 <https://docs.api3.org/reference/airnode/latest/>
+
+Arbitrum Goerli: `0xa0AD79D995DdeeB18a14eAef56A549A04e3Aa1Bd`
 
 ## Request to join dAPI
 
