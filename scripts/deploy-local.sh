@@ -10,7 +10,8 @@ ${BIN_PATH}/generate-config.sh
 docker stop quick-start-container-airnode || true
 docker rm quick-start-container-airnode || true
 docker run -dit \
-  --volume "${WORK_PATH}:/app/config" \
-  --name quick-start-container-airnode \
-  --network host \
+  --restart=aways \
+  --volume="${WORK_PATH}:/app/config" \
+  --name=quick-start-container-airnode \
+  --network=host \
   api3/airnode-client:0.11.2
