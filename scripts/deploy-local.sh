@@ -10,7 +10,7 @@ ${BIN_PATH}/generate-config.sh
 docker stop quick-start-container-airnode || true
 docker rm quick-start-container-airnode || true
 docker run -dit \
-  --restart=aways \
+  --restart=always \
   --volume="${WORK_PATH}:/app/config" \
   --name=quick-start-container-airnode \
   --network=host \
