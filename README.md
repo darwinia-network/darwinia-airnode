@@ -15,7 +15,7 @@
     # Save the mnemonic & xpub
     ```
 
-3. Choose an API provider, such as [Infura](https://app.infura.io/dashboard) or [Alchemy](https://dashboard.alchemy.com/), and then create an API key.
+3. (Temporarily disabled) Choose an API provider, such as [Infura](https://app.infura.io/dashboard) or [Alchemy](https://dashboard.alchemy.com/), and then create an API key.
 Here we need the Arbitrum mainnet and Arbitrum Goerli API. And then set it in `secrets.env`
 
 4. If you forgot to save your xpub address, you can generate it with this command
@@ -122,9 +122,9 @@ When an Airnode was deployed using the deploy command, a receipt.json file was c
 2. npm install @api3/airnode-admin
 3. export PRIVATE_MNEMONIC="YOUR WALLET MNEMONIC"
 
-### Sponsor requester
+### Sponsor requester (Optional)
 
-Please note that you need to run this command **on each chain** to sponsor different requester. Currently: Pangolin & ArbitrumGoerli.
+Please note that you need to run this command **on each chain** to sponsor different requester. Currently: Crab & ArbitrumSepolia.
 
 And this command will submit a transaction, the sponsor-mnemonic wallet should have some token to pay the extrinsic fee.
 
@@ -153,13 +153,13 @@ npx @api3/airnode-admin derive-sponsor-wallet-address \
 
 ### Darwinia Network
 
-Pangolin: `0x6084A81dB23169F8a7BB5fa67C8a78ff9abA9819`
+Crab: `0xa0AD79D995DdeeB18a14eAef56A549A04e3Aa1Bd`
 
 ### Other Networks
 
 <https://docs.api3.org/reference/airnode/latest/>
 
-Arbitrum Goerli: `0xa0AD79D995DdeeB18a14eAef56A549A04e3Aa1Bd`
+Arbitrum Sepolia: `0xa0AD79D995DdeeB18a14eAef56A549A04e3Aa1Bd`
 
 ## Request to join dAPI
 

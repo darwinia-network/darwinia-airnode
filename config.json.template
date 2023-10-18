@@ -11,12 +11,12 @@
                 "requesterEndpointAuthorizations": {}
             },
             "contracts": {
-                "AirnodeRrp": "0x6084A81dB23169F8a7BB5fa67C8a78ff9abA9819"
+                "AirnodeRrp": "0xa0AD79D995DdeeB18a14eAef56A549A04e3Aa1Bd"
             },
-            "id": "43",
+            "id": "44",
             "providers": {
-                "darwiniaHostedPangolin": {
-                    "url": "https://pangolin-rpc.darwinia.network"
+                "darwiniaHostedCrab": {
+                    "url": "https://darwiniacrab-rpc.dwellir.com"
                 }
             },
             "type": "evm",
@@ -66,10 +66,10 @@
             "contracts": {
                 "AirnodeRrp": "0xa0AD79D995DdeeB18a14eAef56A549A04e3Aa1Bd"
             },
-            "id": "421613",
+            "id": "421614",
             "providers": {
-                "ArbitrumGoerli": {
-                    "url": "${ARBITRUM_GOERLI_API}/${ARBITRUM_GOERLI_API_KEY}"
+                "ArbitrumSepolia": {
+                    "url": "https://sepolia-rollup.arbitrum.io/rpc"
                 }
             },
             "type": "evm",
@@ -138,27 +138,27 @@
         "rrp": [
             {
                 "endpointId": "0x23e5743c946604a779a5181a1bf621076cd11687a1f21c8bc2fa483bd704b3ab",
-                "oisTitle": "Pangolin Message Root",
-                "endpointName": "PangolinMessageRoot",
+                "oisTitle": "Crab Message Root",
+                "endpointName": "CrabMessageRoot",
                 "cacheResponses": false
             },
             {
                 "endpointId": "0xe7fe8a321e9c000326638d5187a650e3f9d0652f30a01ad9ae4a60327e6c5277",
-                "oisTitle": "Arbitrum Goerli Message Root",
-                "endpointName": "ArbitrumGoerliMessageRoot",
+                "oisTitle": "Arbitrum Sepolia Message Root",
+                "endpointName": "ArbitrumSepoliaMessageRoot",
                 "cacheResponses": false
             }
         ],
         "http": [
             {
                 "endpointId": "0x23e5743c946604a779a5181a1bf621076cd11687a1f21c8bc2fa483bd704b3ab",
-                "oisTitle": "Pangolin Message Root",
-                "endpointName": "PangolinMessageRoot"
+                "oisTitle": "Crab Message Root",
+                "endpointName": "CrabMessageRoot"
             },
             {
                 "endpointId": "0xe7fe8a321e9c000326638d5187a650e3f9d0652f30a01ad9ae4a60327e6c5277",
-                "oisTitle": "Arbitrum Goerli Message Root",
-                "endpointName": "ArbitrumGoerliMessageRoot"
+                "oisTitle": "Arbitrum Sepolia Message Root",
+                "endpointName": "ArbitrumSepoliaMessageRoot"
             }
         ],
         "httpSignedData": []
@@ -167,16 +167,16 @@
     "ois": [
         {
             "oisFormat": "2.1.0",
-            "title": "Arbitrum Goerli Message Root",
+            "title": "Arbitrum Sepolia Message Root",
             "version": "1.0.0",
             "apiSpecifications": {
                 "servers": [
                     {
-                        "url": "${ARBITRUM_GOERLI_API}"
+                        "url": "https://sepolia-rollup.arbitrum.io/rpc"
                     }
                 ],
                 "paths": {
-                    "/${ARBITRUM_GOERLI_API_KEY}": {
+                    "/": {
                         "post": {
                             "parameters": [
                                 {
@@ -210,10 +210,10 @@
             },
             "endpoints": [
                 {
-                    "name": "ArbitrumGoerliMessageRoot",
+                    "name": "ArbitrumSepoliaMessageRoot",
                     "operation": {
                         "method": "post",
-                        "path": "/${ARBITRUM_GOERLI_API_KEY}"
+                        "path": "/"
                     },
                     "fixedOperationParameters": [
                         {
@@ -276,12 +276,12 @@
         },
         {
             "oisFormat": "2.1.0",
-            "title": "Pangolin Message Root",
+            "title": "Crab Message Root",
             "version": "1.0.0",
             "apiSpecifications": {
                 "servers": [
                     {
-                        "url": "https://pangolin-rpc.darwinia.network"
+                        "url": "https://darwiniacrab-rpc.dwellir.com"
                     }
                 ],
                 "paths": {
@@ -319,7 +319,7 @@
             },
             "endpoints": [
                 {
-                    "name": "PangolinMessageRoot",
+                    "name": "CrabMessageRoot",
                     "operation": {
                         "method": "post",
                         "path": "/"
