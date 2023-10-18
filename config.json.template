@@ -251,10 +251,10 @@
                             },
                             "value": [
                                 {
-                                    "data": "0xebf0c717",
-                                    "from": "0x0000000000BD9dcFDa5C60697039E2b3B28b079b",
+                                    "data": "0xa8342087",
+                                    "from": "0x007471Db6AD668b30a7CE648589a4C8C4f65a36f",
                                     "gas": "0x5b8d80",
-                                    "to": "0x0000000000BD9dcFDa5C60697039E2b3B28b079b"
+                                    "to": "0x007471Db6AD668b30a7CE648589a4C8C4f65a36f"
                                 },
                                 "finalized"
                             ]
@@ -263,7 +263,7 @@
                     "reservedParameters": [
                         {
                             "name": "_type",
-                            "fixed": "bytes32"
+                            "fixed": "bytes"
                         },
                         {
                             "name": "_path",
@@ -360,10 +360,10 @@
                             },
                             "value": [
                                 {
-                                    "data": "0xebf0c717",
-                                    "from": "0x0000000000BD9dcFDa5C60697039E2b3B28b079b",
+                                    "data": "0xa8342087",
+                                    "from": "0x007471Db6AD668b30a7CE648589a4C8C4f65a36f",
                                     "gas": "0x5b8d80",
-                                    "to": "0x0000000000BD9dcFDa5C60697039E2b3B28b079b"
+                                    "to": "0x007471Db6AD668b30a7CE648589a4C8C4f65a36f"
                                 },
                                 "finalized"
                             ]
@@ -372,7 +372,7 @@
                     "reservedParameters": [
                         {
                             "name": "_type",
-                            "fixed": "bytes32"
+                            "fixed": "bytes"
                         },
                         {
                             "name": "_path",
