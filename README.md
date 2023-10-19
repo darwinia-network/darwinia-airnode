@@ -15,7 +15,7 @@
     # Save the mnemonic & xpub
     ```
 
-3. Choose an API provider, such as [Infura](https://app.infura.io/dashboard) or [Alchemy](https://dashboard.alchemy.com/), and then create an API key.
+3. (Temporarily disabled) Choose an API provider, such as [Infura](https://app.infura.io/dashboard) or [Alchemy](https://dashboard.alchemy.com/), and then create an API key.
 Here we need the Arbitrum mainnet and Arbitrum Goerli API. And then set it in `secrets.env`
 
 4. If you forgot to save your xpub address, you can generate it with this command
@@ -114,7 +114,69 @@ When an Airnode was deployed using the deploy command, a receipt.json file was c
     ./scripts/deploy-local.sh
     ```
 
-## Sponsor
+## RRP Contract Addresses
+
+### Darwinia Network
+
+Crab: `0xa0AD79D995DdeeB18a14eAef56A549A04e3Aa1Bd`
+
+### Other Networks
+
+<https://docs.api3.org/reference/airnode/latest/>
+
+Arbitrum Sepolia: `0xa0AD79D995DdeeB18a14eAef56A549A04e3Aa1Bd`
+
+## Request to join dAPI
+
+[New Application](https://github.com/darwinia-oracle-dao/airnode-dapi/issues/new?assignees=hujw77&labels=application&projects=&template=airnode_application.yml&title=%5BApplication%5D%3A+%3Ctitle%3E)
+
+## Check
+
+### Check API
+
+1. Check Crab Message Root:
+
+    ```bash
+    curl -X POST -H 'Content-Type: application/json' http://localhost:3000/http-data/01234567-abcd-abcd-abcd-012345678abc/0x23e5743c946604a779a5181a1bf621076cd11687a1f21c8bc2fa483bd704b3ab -d '{"parameters": {}}'
+
+    # Example Result: {"rawValue":{"jsonrpc":"2.0","result":"0x00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000000027ae5ba08d7291c96c8cbddcc148bf48a6d68c7974b94356f53754ef6171d757","id":"1"},"encodedValue":"0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000000027ae5ba08d7291c96c8cbddcc148bf48a6d68c7974b94356f53754ef6171d757","values":["0x00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000000027ae5ba08d7291c96c8cbddcc148bf48a6d68c7974b94356f53754ef6171d757"]}
+    ```
+
+2. Check ArbitrumSepolia Message Root:
+
+    ```bash
+    curl -X POST -H 'Content-Type: application/json' http://localhost:3000/http-data/01234567-abcd-abcd-abcd-012345678abc/0xe7fe8a321e9c000326638d5187a650e3f9d0652f30a01ad9ae4a60327e6c5277 -d '{"parameters": {}}'
+
+    # Example Result: {"rawValue":{"jsonrpc":"2.0","id":"1","result":"0x00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000000027ae5ba08d7291c96c8cbddcc148bf48a6d68c7974b94356f53754ef6171d757"},"encodedValue":"0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000000027ae5ba08d7291c96c8cbddcc148bf48a6d68c7974b94356f53754ef6171d757","values":["0x00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000000027ae5ba08d7291c96c8cbddcc148bf48a6d68c7974b94356f53754ef6171d757"]}
+    ```
+
+### Check Sponsor
+
+1. Check on Crab
+
+    ```bash
+    # Replace <SPONSOR_ADDRESS> with your sponsor address without '0x'. For example: 9F33a4809aA708d7a399fedBa514e0A0d15EfA85
+    curl -fsS https://darwiniacrab-rpc.dwellir.com -d '{"id":1,"jsonrpc":"2.0","method":"eth_call","params":[{"data":"0xa81e9f79000000000000000000000000<SPONSOR_ADDRESS>000000000000000000000000007471Db6AD668b30a7CE648589a4C8C4f65a36f","from":"0x0f14341A7f464320319025540E8Fe48Ad0fe5aec","gas":"0x1312d00","to":"0x6084A81dB23169F8a7BB5fa67C8a78ff9abA9819"},"latest"]}' -H 'Content-Type: application/json'
+
+    # Result should be: {"jsonrpc":"2.0","result":"0x0000000000000000000000000000000000000000000000000000000000000001","id":1}
+
+    ## examples
+    curl -fsS https://darwiniacrab-rpc.dwellir.com -d '{"id":1,"jsonrpc":"2.0","method":"eth_call","params":[{"data":"0xa81e9f790000000000000000000000009F33a4809aA708d7a399fedBa514e0A0d15EfA85000000000000000000000000007471Db6AD668b30a7CE648589a4C8C4f65a36f","from":"0x0f14341A7f464320319025540E8Fe48Ad0fe5aec","gas":"0x1312d00","to":"0xa0AD79D995DdeeB18a14eAef56A549A04e3Aa1Bd"},"latest"]}' -H 'Content-Type: application/json'
+    ```
+
+2. Check on ArbitrumSepolia
+
+    ```bash
+    # Replace <SPONSOR_ADDRESS> with your sponsor address without '0x'. For example: 9F33a4809aA708d7a399fedBa514e0A0d15EfA85
+    curl -fsS https://sepolia-rollup.arbitrum.io/rpc -d '{"id":1,"jsonrpc":"2.0","method":"eth_call","params":[{"data":"0xa81e9f79000000000000000000000000<SPONSOR_ADDRESS>000000000000000000000000007471Db6AD668b30a7CE648589a4C8C4f65a36f","from":"0x0f14341A7f464320319025540E8Fe48Ad0fe5aec","gas":"0x1312d00","to":"0xa0AD79D995DdeeB18a14eAef56A549A04e3Aa1Bd"},"latest"]}' -H 'Content-Type: application/json'
+
+    # Result should be: {"jsonrpc":"2.0","result":"0x0000000000000000000000000000000000000000000000000000000000000001","id":1}
+
+    ## examples
+    curl -fsS https://sepolia-rollup.arbitrum.io/rpc -d '{"id":1,"jsonrpc":"2.0","method":"eth_call","params":[{"data":"0xa81e9f790000000000000000000000009F33a4809aA708d7a399fedBa514e0A0d15EfA85000000000000000000000000007471Db6AD668b30a7CE648589a4C8C4f65a36f","from":"0x0f14341A7f464320319025540E8Fe48Ad0fe5aec","gas":"0x1312d00","to":"0xa0AD79D995DdeeB18a14eAef56A549A04e3Aa1Bd"},"latest"]}' -H 'Content-Type: application/json'
+    ```
+
+## Sponsor (Optional)
 
 ### Install airnode-admin-cli
 
@@ -124,7 +186,7 @@ When an Airnode was deployed using the deploy command, a receipt.json file was c
 
 ### Sponsor requester
 
-Please note that you need to run this command **on each chain** to sponsor different requester. Currently: Pangolin & ArbitrumGoerli.
+Please note that you need to run this command **on each chain** to sponsor different requester. Currently: Crab & ArbitrumSepolia.
 
 And this command will submit a transaction, the sponsor-mnemonic wallet should have some token to pay the extrinsic fee.
 
@@ -134,6 +196,19 @@ npx @api3/airnode-admin sponsor-requester \
  --sponsor-mnemonic "${PRIVATE_MNEMONIC}" \
  --requester-address <REQUESTER CONTRACT ADDRESS> \ # Get from dapi: <https://github.com/darwinia-oracle-dao/airnode-dapi/blob/main/bin/addr.json>
  --airnode-rrp-address <RRP CONTRACT ADDRESS>   # Listed below. RRP Contract Addresses
+
+## examples
+npx @api3/airnode-admin sponsor-requester \
+ --providerUrl https://sepolia-rollup.arbitrum.io/rpc \
+ --sponsor-mnemonic "${PRIVATE_MNEMONIC}" \
+ --requester-address 0x007471Db6AD668b30a7CE648589a4C8C4f65a36f \
+ --airnode-rrp-address 0xa0AD79D995DdeeB18a14eAef56A549A04e3Aa1Bd
+
+npx @api3/airnode-admin sponsor-requester \
+ --providerUrl https://darwiniacrab-rpc.dwellir.com \
+ --sponsor-mnemonic "${PRIVATE_MNEMONIC}" \
+ --requester-address 0x007471Db6AD668b30a7CE648589a4C8C4f65a36f \
+ --airnode-rrp-address 0xa0AD79D995DdeeB18a14eAef56A549A04e3Aa1Bd
 ```
 
 > Requester address 0x1234... is now sponsored by 0x456...
@@ -145,62 +220,31 @@ npx @api3/airnode-admin derive-sponsor-wallet-address \
   --airnode-xpub <AIRNODE XPUB ADDRESS> \ # Refer to **Prerequisites** Part, Step 4
   --airnode-address <AIRNODE PUB ADDRESS> \
   --sponsor-address <SPONSOR PUB ADDRESS> # This is the public key corresponding to the mnemonic address you used in the previous step.
+
+## examples
+npx @api3/airnode-admin derive-sponsor-wallet-address \
+  --airnode-xpub xpub6DWQQABWBAU9NrbC9K965k1RsmLRkVaiTmU7rkhjsB6x8ExvuwxJW883j7uwVSY6ZEsR6jsVcZ9FF3KQDnE4s6sX6FWm3ZhbTSjzwpDcSSC \
+  --airnode-address 0x1F7A2204b2c255AE6501eeCE29051315ca0aefa4 \
+  --sponsor-address 0x9F33a4809aA708d7a399fedBa514e0A0d15EfA85
 ```
 
 > Sponsor wallet address: 0x1234...
 
-## RRP Contract Addresses
+### Request withdrawal
 
-### Darwinia Network
+```shell
+## examples https://docs.api3.org/reference/airnode/latest/packages/admin-cli.html#request-withdrawal
+npx @api3/airnode-admin request-withdrawal \
+  --provider-url https://darwiniacrab-rpc.dwellir.com \
+  --sponsor-mnemonic "${PRIVATE_MNEMONIC}" \
+  --airnode-address 0x1F7A2204b2c255AE6501eeCE29051315ca0aefa4 \
+  --airnode-rrp-address 0xa0AD79D995DdeeB18a14eAef56A549A04e3Aa1Bd \
+  --sponsor-wallet-address 0x9674dc5e867014Ba91E6d53753BcA5D2abcFF9E3
 
-Pangolin: `0x6084A81dB23169F8a7BB5fa67C8a78ff9abA9819`
-
-### Other Networks
-
-<https://docs.api3.org/reference/airnode/latest/>
-
-Arbitrum Goerli: `0xa0AD79D995DdeeB18a14eAef56A549A04e3Aa1Bd`
-
-## Request to join dAPI
-
-[New Application](https://github.com/darwinia-oracle-dao/airnode-dapi/issues/new?assignees=hujw77&labels=application&projects=&template=airnode_application.yml&title=%5BApplication%5D%3A+%3Ctitle%3E)
-
-## Check
-
-### Check API
-
-1. Check Pangolin Message Root:
-
-    ```bash
-    curl -X POST -H 'Content-Type: application/json' http://localhost:3000/http-data/01234567-abcd-abcd-abcd-012345678abc/0x23e5743c946604a779a5181a1bf621076cd11687a1f21c8bc2fa483bd704b3ab -d '{"parameters": {}}'
-
-    # Example Result: {"rawValue":{"jsonrpc":"2.0","result":"0x23f8521e1830f581a286fd08b2cbab9055fb904f8ee727d54cfedcf1905a3897","id":"1"},"encodedValue":"0x23f8521e1830f581a286fd08b2cbab9055fb904f8ee727d54cfedcf1905a3897","values":["0x23f8521e1830f581a286fd08b2cbab9055fb904f8ee727d54cfedcf1905a3897"]}
-    ```
-
-2. Check ArbitrumGoerli Message Root:
-
-    ```bash
-    curl -X POST -H 'Content-Type: application/json' http://localhost:3000/http-data/01234567-abcd-abcd-abcd-012345678abc/0xe7fe8a321e9c000326638d5187a650e3f9d0652f30a01ad9ae4a60327e6c5277 -d '{"parameters": {}}'
-
-    # Example Result: {"rawValue":{"jsonrpc":"2.0","result":"0x23f8521e1830f581a286fd08b2cbab9055fb904f8ee727d54cfedcf1905a3897","id":"1"},"encodedValue":"0x23f8521e1830f581a286fd08b2cbab9055fb904f8ee727d54cfedcf1905a3897","values":["0x23f8521e1830f581a286fd08b2cbab9055fb904f8ee727d54cfedcf1905a3897"]}
-    ```
-
-### Check Sponsor
-
-1. Check on Pangolin
-
-    ```bash
-    # Replace <SPONSOR_ADDRESS> with your sponsor address without '0x'. For example: 9F33a4809aA708d7a399fedBa514e0A0d15EfA85
-    curl -fsS https://pangolin-rpc.darwinia.network/ -d '{"id":1,"jsonrpc":"2.0","method":"eth_call","params":[{"data":"0xa81e9f79000000000000000000000000<SPONSOR_ADDRESS>000000000000000000000000770713580e5c618a4d29d7e8c0d7604276b63832","from":"0x0f14341A7f464320319025540E8Fe48Ad0fe5aec","gas":"0x1312d00","to":"0x6084A81dB23169F8a7BB5fa67C8a78ff9abA9819"},"latest"]}' -H 'Content-Type: application/json'
-
-    # Result should be: {"jsonrpc":"2.0","result":"0x0000000000000000000000000000000000000000000000000000000000000001","id":1}
-    ```
-
-2. Check on ArbitrumGoerli
-
-    ```bash
-    # Replace <SPONSOR_ADDRESS> with your sponsor address without '0x'. For example: 9F33a4809aA708d7a399fedBa514e0A0d15EfA85
-    curl -fsS https://rpc.goerli.arbitrum.gateway.fm -d '{"id":1,"jsonrpc":"2.0","method":"eth_call","params":[{"data":"0xa81e9f79000000000000000000000000<SPONSOR_ADDRESS>000000000000000000000000a681492DBAd5a3999cFCE2d72196d5784dd08D0c","from":"0x0f14341A7f464320319025540E8Fe48Ad0fe5aec","gas":"0x1312d00","to":"0xa0AD79D995DdeeB18a14eAef56A549A04e3Aa1Bd"},"latest"]}' -H 'Content-Type: application/json'
-
-    # Result should be: {"jsonrpc":"2.0","result":"0x0000000000000000000000000000000000000000000000000000000000000001","id":1}
-    ```
+npx @api3/airnode-admin request-withdrawal \
+  --provider-url https://sepolia-rollup.arbitrum.io/rpc \
+  --sponsor-mnemonic "${PRIVATE_MNEMONIC}" \
+  --airnode-address 0x1F7A2204b2c255AE6501eeCE29051315ca0aefa4 \
+  --airnode-rrp-address 0xa0AD79D995DdeeB18a14eAef56A549A04e3Aa1Bd \
+  --sponsor-wallet-address 0x9674dc5e867014Ba91E6d53753BcA5D2abcFF9E3
+```
