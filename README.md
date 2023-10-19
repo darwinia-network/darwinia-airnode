@@ -210,13 +210,13 @@ npx @api3/airnode-admin sponsor-requester \
 npx @api3/airnode-admin sponsor-requester \
  --providerUrl https://sepolia-rollup.arbitrum.io/rpc \
  --sponsor-mnemonic "${PRIVATE_MNEMONIC}" \
- --requester-address 0x007471Db6AD668b30a7CE648589a4C8C4f65a36f \
+ --requester-address 0x001F4321429B1E2DF774bdAe0fc62A7394652E0F \
  --airnode-rrp-address 0xa0AD79D995DdeeB18a14eAef56A549A04e3Aa1Bd
 
 npx @api3/airnode-admin sponsor-requester \
  --providerUrl https://darwiniacrab-rpc.dwellir.com \
  --sponsor-mnemonic "${PRIVATE_MNEMONIC}" \
- --requester-address 0x007471Db6AD668b30a7CE648589a4C8C4f65a36f \
+ --requester-address 0x001F4321429B1E2DF774bdAe0fc62A7394652E0F \
  --airnode-rrp-address 0xa0AD79D995DdeeB18a14eAef56A549A04e3Aa1Bd
 ```
 
