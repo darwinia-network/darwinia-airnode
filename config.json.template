@@ -74,7 +74,7 @@
             },
             "type": "evm",
             "options": {
-                "fulfillmentGasLimit": 100000,
+                "fulfillmentGasLimit": 0,
                 "gasPriceOracle": [
                     {
                         "gasPriceStrategy": "latestBlockPercentileGasPrice",

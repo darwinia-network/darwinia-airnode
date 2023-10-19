@@ -114,41 +114,6 @@ When an Airnode was deployed using the deploy command, a receipt.json file was c
     ./scripts/deploy-local.sh
     ```
 
-## Sponsor
-
-### Install airnode-admin-cli
-
-1. npm install npx
-2. npm install @api3/airnode-admin
-3. export PRIVATE_MNEMONIC="YOUR WALLET MNEMONIC"
-
-### Sponsor requester (Optional)
-
-Please note that you need to run this command **on each chain** to sponsor different requester. Currently: Crab & ArbitrumSepolia.
-
-And this command will submit a transaction, the sponsor-mnemonic wallet should have some token to pay the extrinsic fee.
-
-```shell
-npx @api3/airnode-admin sponsor-requester \
- --provider-url <Network RPC> \
- --sponsor-mnemonic "${PRIVATE_MNEMONIC}" \
- --requester-address <REQUESTER CONTRACT ADDRESS> \ # Get from dapi: <https://github.com/darwinia-oracle-dao/airnode-dapi/blob/main/bin/addr.json>
- --airnode-rrp-address <RRP CONTRACT ADDRESS>   # Listed below. RRP Contract Addresses
-```
-
-> Requester address 0x1234... is now sponsored by 0x456...
-
-### Derive sponsor wallet
-
-```shell
-npx @api3/airnode-admin derive-sponsor-wallet-address \
-  --airnode-xpub <AIRNODE XPUB ADDRESS> \ # Refer to **Prerequisites** Part, Step 4
-  --airnode-address <AIRNODE PUB ADDRESS> \
-  --sponsor-address <SPONSOR PUB ADDRESS> # This is the public key corresponding to the mnemonic address you used in the previous step.
-```
-
-> Sponsor wallet address: 0x1234...
-
 ## RRP Contract Addresses
 
 ### Darwinia Network
@@ -204,3 +169,76 @@ Arbitrum Sepolia: `0xa0AD79D995DdeeB18a14eAef56A549A04e3Aa1Bd`
 
     # Result should be: {"jsonrpc":"2.0","result":"0x0000000000000000000000000000000000000000000000000000000000000001","id":1}
     ```
+
+## Sponsor (Optional)
+
+### Install airnode-admin-cli
+
+1. npm install npx
+2. npm install @api3/airnode-admin
+3. export PRIVATE_MNEMONIC="YOUR WALLET MNEMONIC"
+
+### Sponsor requester
+
+Please note that you need to run this command **on each chain** to sponsor different requester. Currently: Crab & ArbitrumSepolia.
+
+And this command will submit a transaction, the sponsor-mnemonic wallet should have some token to pay the extrinsic fee.
+
+```shell
+npx @api3/airnode-admin sponsor-requester \
+ --provider-url <Network RPC> \
+ --sponsor-mnemonic "${PRIVATE_MNEMONIC}" \
+ --requester-address <REQUESTER CONTRACT ADDRESS> \ # Get from dapi: <https://github.com/darwinia-oracle-dao/airnode-dapi/blob/main/bin/addr.json>
+ --airnode-rrp-address <RRP CONTRACT ADDRESS>   # Listed below. RRP Contract Addresses
+
+## examples
+npx @api3/airnode-admin sponsor-requester \
+ --providerUrl https://sepolia-rollup.arbitrum.io/rpc \
+ --sponsor-mnemonic "${PRIVATE_MNEMONIC}" \
+ --requester-address 0x007471Db6AD668b30a7CE648589a4C8C4f65a36f \
+ --airnode-rrp-address 0xa0AD79D995DdeeB18a14eAef56A549A04e3Aa1Bd
+
+npx @api3/airnode-admin sponsor-requester \
+ --providerUrl https://darwiniacrab-rpc.dwellir.com \
+ --sponsor-mnemonic "${PRIVATE_MNEMONIC}" \
+ --requester-address 0x007471Db6AD668b30a7CE648589a4C8C4f65a36f \
+ --airnode-rrp-address 0xa0AD79D995DdeeB18a14eAef56A549A04e3Aa1Bd
+```
+
+> Requester address 0x1234... is now sponsored by 0x456...
+
+### Derive sponsor wallet
+
+```shell
+npx @api3/airnode-admin derive-sponsor-wallet-address \
+  --airnode-xpub <AIRNODE XPUB ADDRESS> \ # Refer to **Prerequisites** Part, Step 4
+  --airnode-address <AIRNODE PUB ADDRESS> \
+  --sponsor-address <SPONSOR PUB ADDRESS> # This is the public key corresponding to the mnemonic address you used in the previous step.
+
+## examples
+npx @api3/airnode-admin derive-sponsor-wallet-address \
+  --airnode-xpub xpub6DWQQABWBAU9NrbC9K965k1RsmLRkVaiTmU7rkhjsB6x8ExvuwxJW883j7uwVSY6ZEsR6jsVcZ9FF3KQDnE4s6sX6FWm3ZhbTSjzwpDcSSC \
+  --airnode-address 0x1F7A2204b2c255AE6501eeCE29051315ca0aefa4 \
+  --sponsor-address 0x9F33a4809aA708d7a399fedBa514e0A0d15EfA85
+```
+
+> Sponsor wallet address: 0x1234...
+
+### Request withdrawal
+
+```shell
+## examples https://docs.api3.org/reference/airnode/latest/packages/admin-cli.html#request-withdrawal
+npx @api3/airnode-admin request-withdrawal \
+  --provider-url https://darwiniacrab-rpc.dwellir.com \
+  --sponsor-mnemonic "${PRIVATE_MNEMONIC}" \
+  --airnode-address 0x1F7A2204b2c255AE6501eeCE29051315ca0aefa4 \
+  --airnode-rrp-address 0xa0AD79D995DdeeB18a14eAef56A549A04e3Aa1Bd \
+  --sponsor-wallet-address 0x9674dc5e867014Ba91E6d53753BcA5D2abcFF9E3
+
+npx @api3/airnode-admin request-withdrawal \
+  --provider-url https://sepolia-rollup.arbitrum.io/rpc \
+  --sponsor-mnemonic "${PRIVATE_MNEMONIC}" \
+  --airnode-address 0x1F7A2204b2c255AE6501eeCE29051315ca0aefa4 \
+  --airnode-rrp-address 0xa0AD79D995DdeeB18a14eAef56A549A04e3Aa1Bd \
+  --sponsor-wallet-address 0x9674dc5e867014Ba91E6d53753BcA5D2abcFF9E3
+```
