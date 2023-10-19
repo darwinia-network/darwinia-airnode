@@ -176,6 +176,15 @@ Arbitrum Sepolia: `0xa0AD79D995DdeeB18a14eAef56A549A04e3Aa1Bd`
     curl -fsS https://sepolia-rollup.arbitrum.io/rpc -d '{"id":1,"jsonrpc":"2.0","method":"eth_call","params":[{"data":"0xa81e9f790000000000000000000000009F33a4809aA708d7a399fedBa514e0A0d15EfA85000000000000000000000000007471Db6AD668b30a7CE648589a4C8C4f65a36f","from":"0x0f14341A7f464320319025540E8Fe48Ad0fe5aec","gas":"0x1312d00","to":"0xa0AD79D995DdeeB18a14eAef56A549A04e3Aa1Bd"},"latest"]}' -H 'Content-Type: application/json'
     ```
 
+## How to upgrade?
+
+```bash
+cd <Your config directory>
+git checkout main
+git pull
+./scripts/deploy-local.sh  # The script you used before
+```
+
 ## Sponsor (Optional)
 
 ### Install airnode-admin-cli
