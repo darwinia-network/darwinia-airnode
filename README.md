@@ -257,3 +257,17 @@ npx @api3/airnode-admin request-withdrawal \
   --airnode-rrp-address 0xa0AD79D995DdeeB18a14eAef56A549A04e3Aa1Bd \
   --sponsor-wallet-address 0x9674dc5e867014Ba91E6d53753BcA5D2abcFF9E3
 ```
+
+## Develop
+
+### Derive endpoint id
+
+```bash
+npx @api3/airnode-admin derive-endpoint-id \
+  --ois-title "Crab Message Root" \
+  --endpoint-name "CrabMessageRoot"
+
+npx @api3/airnode-admin derive-endpoint-id \
+  --ois-title "Arbitrum Sepolia Message Root" \
+  --endpoint-name "ArbitrumSepoliaMessageRoot"
+```

@@ -11,7 +11,8 @@
                 "requesterEndpointAuthorizations": {}
             },
             "contracts": {
-                "AirnodeRrp": "0xa0AD79D995DdeeB18a14eAef56A549A04e3Aa1Bd"
+                "AirnodeRrp": "0xa0AD79D995DdeeB18a14eAef56A549A04e3Aa1Bd",
+                "AirnodeRrpDryRun": "0x2e768206bf5112e7D7efAf1d9df614C26475193f"
             },
             "id": "44",
             "providers": {
@@ -21,7 +22,6 @@
             },
             "type": "evm",
             "options": {
-                "fulfillmentGasLimit": 200000,
                 "gasPriceOracle": [
                     {
                         "gasPriceStrategy": "latestBlockPercentileGasPrice",
@@ -64,7 +64,8 @@
                 "requesterEndpointAuthorizations": {}
             },
             "contracts": {
-                "AirnodeRrp": "0xa0AD79D995DdeeB18a14eAef56A549A04e3Aa1Bd"
+                "AirnodeRrp": "0xa0AD79D995DdeeB18a14eAef56A549A04e3Aa1Bd",
+                "AirnodeRrpDryRun": "0x2e768206bf5112e7D7efAf1d9df614C26475193f"
             },
             "id": "421614",
             "providers": {
@@ -74,7 +75,6 @@
             },
             "type": "evm",
             "options": {
-                "fulfillmentGasLimit": 0,
                 "gasPriceOracle": [
                     {
                         "gasPriceStrategy": "latestBlockPercentileGasPrice",
@@ -131,19 +131,19 @@
         },
         "logFormat": "plain",
         "logLevel": "DEBUG",
-        "nodeVersion": "0.11.2",
+        "nodeVersion": "0.12.0",
         "stage": "darwinia-airnode"
     },
     "triggers": {
         "rrp": [
             {
-                "endpointId": "0x23e5743c946604a779a5181a1bf621076cd11687a1f21c8bc2fa483bd704b3ab",
+                "endpointId": "0xbd452be65dba2428924ea35129292b3247233952dae361d169f2d489d805ce23",
                 "oisTitle": "Crab Message Root",
                 "endpointName": "CrabMessageRoot",
                 "cacheResponses": false
             },
             {
-                "endpointId": "0xe7fe8a321e9c000326638d5187a650e3f9d0652f30a01ad9ae4a60327e6c5277",
+                "endpointId": "0x63400292c39bafe31164968499615317be0f1b97b4122a29d436c8fb427fdf65",
                 "oisTitle": "Arbitrum Sepolia Message Root",
                 "endpointName": "ArbitrumSepoliaMessageRoot",
                 "cacheResponses": false
@@ -151,12 +151,12 @@
         ],
         "http": [
             {
-                "endpointId": "0x23e5743c946604a779a5181a1bf621076cd11687a1f21c8bc2fa483bd704b3ab",
+                "endpointId": "0xbd452be65dba2428924ea35129292b3247233952dae361d169f2d489d805ce23",
                 "oisTitle": "Crab Message Root",
                 "endpointName": "CrabMessageRoot"
             },
             {
-                "endpointId": "0xe7fe8a321e9c000326638d5187a650e3f9d0652f30a01ad9ae4a60327e6c5277",
+                "endpointId": "0x63400292c39bafe31164968499615317be0f1b97b4122a29d436c8fb427fdf65",
                 "oisTitle": "Arbitrum Sepolia Message Root",
                 "endpointName": "ArbitrumSepoliaMessageRoot"
             }

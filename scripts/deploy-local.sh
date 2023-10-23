@@ -14,4 +14,4 @@ docker run -dit \
   --volume="${WORK_PATH}:/app/config" \
   --name=quick-start-container-airnode \
   --network=host \
-  api3/airnode-client:0.11.2
+  api3/airnode-client:0.12.0
