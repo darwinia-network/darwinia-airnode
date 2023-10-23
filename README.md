@@ -156,24 +156,24 @@ Arbitrum Sepolia: `0xa0AD79D995DdeeB18a14eAef56A549A04e3Aa1Bd`
 
     ```bash
     # Replace <SPONSOR_ADDRESS> with your sponsor address without '0x'. For example: 9F33a4809aA708d7a399fedBa514e0A0d15EfA85
-    curl -fsS https://darwiniacrab-rpc.dwellir.com -d '{"id":1,"jsonrpc":"2.0","method":"eth_call","params":[{"data":"0xa81e9f79000000000000000000000000<SPONSOR_ADDRESS>000000000000000000000000001F4321429B1E2DF774bdAe0fc62A7394652E0F","from":"0x0f14341A7f464320319025540E8Fe48Ad0fe5aec","gas":"0x1312d00","to":"0x6084A81dB23169F8a7BB5fa67C8a78ff9abA9819"},"latest"]}' -H 'Content-Type: application/json'
+    curl -fsS https://darwiniacrab-rpc.dwellir.com -d '{"id":1,"jsonrpc":"2.0","method":"eth_call","params":[{"data":"0xa81e9f79000000000000000000000000<SPONSOR_ADDRESS>00000000000000000000000000945C032A37454333d7044a52a5A42Aa0f6c608","from":"0x0f14341A7f464320319025540E8Fe48Ad0fe5aec","gas":"0x1312d00","to":"0x6084A81dB23169F8a7BB5fa67C8a78ff9abA9819"},"latest"]}' -H 'Content-Type: application/json'
 
     # Result should be: {"jsonrpc":"2.0","result":"0x0000000000000000000000000000000000000000000000000000000000000001","id":1}
 
     ## examples
-    curl -fsS https://darwiniacrab-rpc.dwellir.com -d '{"id":1,"jsonrpc":"2.0","method":"eth_call","params":[{"data":"0xa81e9f790000000000000000000000009F33a4809aA708d7a399fedBa514e0A0d15EfA85000000000000000000000000001F4321429B1E2DF774bdAe0fc62A7394652E0F","from":"0x0f14341A7f464320319025540E8Fe48Ad0fe5aec","gas":"0x1312d00","to":"0xa0AD79D995DdeeB18a14eAef56A549A04e3Aa1Bd"},"latest"]}' -H 'Content-Type: application/json'
+    curl -fsS https://darwiniacrab-rpc.dwellir.com -d '{"id":1,"jsonrpc":"2.0","method":"eth_call","params":[{"data":"0xa81e9f790000000000000000000000009F33a4809aA708d7a399fedBa514e0A0d15EfA8500000000000000000000000000945C032A37454333d7044a52a5A42Aa0f6c608","from":"0x0f14341A7f464320319025540E8Fe48Ad0fe5aec","gas":"0x1312d00","to":"0xa0AD79D995DdeeB18a14eAef56A549A04e3Aa1Bd"},"latest"]}' -H 'Content-Type: application/json'
     ```
 
 2. Check on ArbitrumSepolia
 
     ```bash
     # Replace <SPONSOR_ADDRESS> with your sponsor address without '0x'. For example: 9F33a4809aA708d7a399fedBa514e0A0d15EfA85
-    curl -fsS https://sepolia-rollup.arbitrum.io/rpc -d '{"id":1,"jsonrpc":"2.0","method":"eth_call","params":[{"data":"0xa81e9f79000000000000000000000000<SPONSOR_ADDRESS>000000000000000000000000001F4321429B1E2DF774bdAe0fc62A7394652E0F","from":"0x0f14341A7f464320319025540E8Fe48Ad0fe5aec","gas":"0x1312d00","to":"0xa0AD79D995DdeeB18a14eAef56A549A04e3Aa1Bd"},"latest"]}' -H 'Content-Type: application/json'
+    curl -fsS https://sepolia-rollup.arbitrum.io/rpc -d '{"id":1,"jsonrpc":"2.0","method":"eth_call","params":[{"data":"0xa81e9f79000000000000000000000000<SPONSOR_ADDRESS>00000000000000000000000000945C032A37454333d7044a52a5A42Aa0f6c608","from":"0x0f14341A7f464320319025540E8Fe48Ad0fe5aec","gas":"0x1312d00","to":"0xa0AD79D995DdeeB18a14eAef56A549A04e3Aa1Bd"},"latest"]}' -H 'Content-Type: application/json'
 
     # Result should be: {"jsonrpc":"2.0","result":"0x0000000000000000000000000000000000000000000000000000000000000001","id":1}
 
     ## examples
-    curl -fsS https://sepolia-rollup.arbitrum.io/rpc -d '{"id":1,"jsonrpc":"2.0","method":"eth_call","params":[{"data":"0xa81e9f790000000000000000000000009F33a4809aA708d7a399fedBa514e0A0d15EfA85000000000000000000000000001F4321429B1E2DF774bdAe0fc62A7394652E0F","from":"0x0f14341A7f464320319025540E8Fe48Ad0fe5aec","gas":"0x1312d00","to":"0xa0AD79D995DdeeB18a14eAef56A549A04e3Aa1Bd"},"latest"]}' -H 'Content-Type: application/json'
+    curl -fsS https://sepolia-rollup.arbitrum.io/rpc -d '{"id":1,"jsonrpc":"2.0","method":"eth_call","params":[{"data":"0xa81e9f790000000000000000000000009F33a4809aA708d7a399fedBa514e0A0d15EfA8500000000000000000000000000945C032A37454333d7044a52a5A42Aa0f6c608","from":"0x0f14341A7f464320319025540E8Fe48Ad0fe5aec","gas":"0x1312d00","to":"0xa0AD79D995DdeeB18a14eAef56A549A04e3Aa1Bd"},"latest"]}' -H 'Content-Type: application/json'
     ```
 
 ## How to upgrade?
@@ -210,13 +210,13 @@ npx @api3/airnode-admin sponsor-requester \
 npx @api3/airnode-admin sponsor-requester \
  --providerUrl https://sepolia-rollup.arbitrum.io/rpc \
  --sponsor-mnemonic "${PRIVATE_MNEMONIC}" \
- --requester-address 0x001F4321429B1E2DF774bdAe0fc62A7394652E0F \
+ --requester-address 0x00945C032A37454333d7044a52a5A42Aa0f6c608 \
  --airnode-rrp-address 0xa0AD79D995DdeeB18a14eAef56A549A04e3Aa1Bd
 
 npx @api3/airnode-admin sponsor-requester \
  --providerUrl https://darwiniacrab-rpc.dwellir.com \
  --sponsor-mnemonic "${PRIVATE_MNEMONIC}" \
- --requester-address 0x001F4321429B1E2DF774bdAe0fc62A7394652E0F \
+ --requester-address 0x00945C032A37454333d7044a52a5A42Aa0f6c608 \
  --airnode-rrp-address 0xa0AD79D995DdeeB18a14eAef56A549A04e3Aa1Bd
 ```
 
