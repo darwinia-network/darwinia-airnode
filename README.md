@@ -114,22 +114,6 @@ When an Airnode was deployed using the deploy command, a receipt.json file was c
     ./scripts/deploy-local.sh
     ```
 
-## RRP Contract Addresses
-
-### Darwinia Network
-
-Crab: `0xa0AD79D995DdeeB18a14eAef56A549A04e3Aa1Bd`
-
-Darwinia: `0x4381F59f6dCFdb4fc1e5315503B9810E1FadEec1`
-
-### Other Networks
-
-<https://docs.api3.org/reference/airnode/latest/>
-
-Arbitrum Sepolia: `0xa0AD79D995DdeeB18a14eAef56A549A04e3Aa1Bd`
-
-Arbitrum: `0xb015ACeEdD478fc497A798Ab45fcED8BdEd08924`
-
 ## Request to join dAPI
 
 [New Application](https://github.com/darwinia-oracle-dao/airnode-dapi/issues/new?assignees=hujw77&labels=application&projects=&template=airnode_application.yml&title=%5BApplication%5D%3A+%3Ctitle%3E)
