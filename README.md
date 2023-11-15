@@ -114,9 +114,9 @@ When an Airnode was deployed using the deploy command, a receipt.json file was c
     ./scripts/deploy-local.sh
     ```
 
-## Request to join dAPI
+## Request to join subAPI
 
-[New Application](https://github.com/darwinia-oracle-dao/airnode-dapi/issues/new?assignees=hujw77&labels=application&projects=&template=airnode_application.yml&title=%5BApplication%5D%3A+%3Ctitle%3E)
+[New Application](https://github.com/subapidao/subapi/issues/new?assignees=hujw77&labels=application&projects=&template=airnode_application.yml&title=%5BApplication%5D%3A+%3Ctitle%3E)
 
 ## Check
 
@@ -203,7 +203,7 @@ And this command will submit a transaction, the sponsor-mnemonic wallet should h
 npx @api3/airnode-admin sponsor-requester \
  --provider-url <Network RPC> \
  --sponsor-mnemonic "${PRIVATE_MNEMONIC}" \
- --requester-address <REQUESTER CONTRACT ADDRESS> \ # Get from dapi: <https://github.com/darwinia-oracle-dao/airnode-dapi/blob/main/bin/addr.json>
+ --requester-address <REQUESTER CONTRACT ADDRESS> \ # Get from subAPI: <https://github.com/subapidao/subapi#readme>
  --airnode-rrp-address <RRP CONTRACT ADDRESS>   # Listed below. RRP Contract Addresses
 
 ## examples
