@@ -1,0 +1,175 @@
+{
+    "chain": {
+        "authorizers": {
+            "requesterEndpointAuthorizers": [],
+            "crossChainRequesterAuthorizers": [],
+            "requesterAuthorizersWithErc721": [],
+            "crossChainRequesterAuthorizersWithErc721": []
+        },
+        "authorizations": {
+            "requesterEndpointAuthorizations": {}
+        },
+        "contracts": {
+            "AirnodeRrp": "0xa0AD79D995DdeeB18a14eAef56A549A04e3Aa1Bd",
+            "AirnodeRrpDryRun": "0x2e768206bf5112e7D7efAf1d9df614C26475193f"
+        },
+        "id": "421614",
+        "providers": {
+            "ArbitrumSepolia": {
+                "url": "https://sepolia-rollup.arbitrum.io/rpc"
+            }
+        },
+        "type": "evm",
+        "options": {
+            "gasPriceOracle": [
+                {
+                    "gasPriceStrategy": "latestBlockPercentileGasPrice",
+                    "percentile": 60,
+                    "minTransactionCount": 20,
+                    "pastToCompareInBlocks": 20,
+                    "maxDeviationMultiplier": 2
+                },
+                {
+                    "gasPriceStrategy": "providerRecommendedGasPrice",
+                    "recommendedGasPriceMultiplier": 1.2
+                },
+                {
+                    "gasPriceStrategy": "providerRecommendedEip1559GasPrice",
+                    "baseFeeMultiplier": 2,
+                    "priorityFee": {
+                        "value": 3.12,
+                        "unit": "gwei"
+                    }
+                },
+                {
+                    "gasPriceStrategy": "constantGasPrice",
+                    "gasPrice": {
+                        "value": 10,
+                        "unit": "gwei"
+                    }
+                }
+            ]
+        },
+        "maxConcurrency": 100
+    },
+    "rrp": {
+        "endpointId": "0x63400292c39bafe31164968499615317be0f1b97b4122a29d436c8fb427fdf65",
+        "oisTitle": "Arbitrum Sepolia Message Root",
+        "endpointName": "ArbitrumSepoliaMessageRoot",
+        "cacheResponses": false
+    },
+    "http": {
+        "endpointId": "0x63400292c39bafe31164968499615317be0f1b97b4122a29d436c8fb427fdf65",
+        "oisTitle": "Arbitrum Sepolia Message Root",
+        "endpointName": "ArbitrumSepoliaMessageRoot"
+    },
+    "ois": {
+        "oisFormat": "2.1.0",
+        "title": "Arbitrum Sepolia Message Root",
+        "version": "1.0.0",
+        "apiSpecifications": {
+            "servers": [
+                {
+                    "url": "https://sepolia-rollup.arbitrum.io/rpc"
+                }
+            ],
+            "paths": {
+                "/": {
+                    "post": {
+                        "parameters": [
+                            {
+                                "in": "header",
+                                "name": "Content-Type"
+                            },
+                            {
+                                "in": "query",
+                                "name": "method"
+                            },
+                            {
+                                "in": "query",
+                                "name": "id"
+                            },
+                            {
+                                "in": "query",
+                                "name": "jsonrpc"
+                            },
+                            {
+                                "in": "query",
+                                "name": "params"
+                            }
+                        ]
+                    }
+                }
+            },
+            "components": {
+                "securitySchemes": {}
+            },
+            "security": {}
+        },
+        "endpoints": [
+            {
+                "name": "ArbitrumSepoliaMessageRoot",
+                "operation": {
+                    "method": "post",
+                    "path": "/"
+                },
+                "fixedOperationParameters": [
+                    {
+                        "operationParameter": {
+                            "in": "header",
+                            "name": "Content-Type"
+                        },
+                        "value": "application/json"
+                    },
+                    {
+                        "operationParameter": {
+                            "in": "query",
+                            "name": "method"
+                        },
+                        "value": "eth_call"
+                    },
+                    {
+                        "operationParameter": {
+                            "in": "query",
+                            "name": "id"
+                        },
+                        "value": "1"
+                    },
+                    {
+                        "operationParameter": {
+                            "in": "query",
+                            "name": "jsonrpc"
+                        },
+                        "value": "2.0"
+                    },
+                    {
+                        "operationParameter": {
+                            "in": "query",
+                            "name": "params"
+                        },
+                        "value": [
+                            {
+                                "data": "0xa8342087",
+                                "from": "0x00000000007317c91F57D86A410934A490E62E1E",
+                                "gas": "0x5b8d80",
+                                "to": "0x00000000007317c91F57D86A410934A490E62E1E"
+                            },
+                            "finalized"
+                        ]
+                    }
+                ],
+                "reservedParameters": [
+                    {
+                        "name": "_type",
+                        "fixed": "bytes"
+                    },
+                    {
+                        "name": "_path",
+                        "fixed": "result"
+                    }
+                ],
+                "parameters": []
+            }
+        ]
+    }
+}

@@ -4,3 +4,4 @@ logs/**
 *.env
 *.local.*
 *.json
+!networks/*/*.json
