@@ -5,7 +5,7 @@ set -e
 BIN_PATH=$(cd "$(dirname "$0")"; pwd -P)
 WORK_PATH=${BIN_PATH}/../
 
-${BIN_PATH}/generate-config.sh
+${BIN_PATH}/generate-config.js
 
 CONTAINER_NAME=${1:-quick-start-container-airnode}
 
