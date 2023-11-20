@@ -81,7 +81,7 @@ function main() {
       // mainnet
       "arbitrum", "darwinia",
       // testnet
-      "arbitrum-sepolia", "crab"
+      "arbitrum-sepolia", "crab", "sepolia"
     ];
   }
   const config = handleConfig(args);

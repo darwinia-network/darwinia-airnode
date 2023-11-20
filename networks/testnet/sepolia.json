@@ -1,0 +1,175 @@
+{
+    "chain": {
+        "authorizers": {
+            "requesterEndpointAuthorizers": [],
+            "crossChainRequesterAuthorizers": [],
+            "requesterAuthorizersWithErc721": [],
+            "crossChainRequesterAuthorizersWithErc721": []
+        },
+        "authorizations": {
+            "requesterEndpointAuthorizations": {}
+        },
+        "contracts": {
+            "AirnodeRrp": "0x2ab9f26E18B64848cd349582ca3B55c2d06f507d",
+            "AirnodeRrpDryRun": "0xFb10b1b0f68b3EaAcA1eCD12a47Cf7F55BeabB98"
+        },
+        "id": "11155111",
+        "providers": {
+            "Sepolia": {
+                "url": "https://rpc.sepolia.org"
+            }
+        },
+        "type": "evm",
+        "options": {
+            "gasPriceOracle": [
+                {
+                    "gasPriceStrategy": "latestBlockPercentileGasPrice",
+                    "percentile": 60,
+                    "minTransactionCount": 20,
+                    "pastToCompareInBlocks": 20,
+                    "maxDeviationMultiplier": 2
+                },
+                {
+                    "gasPriceStrategy": "providerRecommendedGasPrice",
+                    "recommendedGasPriceMultiplier": 1.2
+                },
+                {
+                    "gasPriceStrategy": "providerRecommendedEip1559GasPrice",
+                    "baseFeeMultiplier": 2,
+                    "priorityFee": {
+                        "value": 3.12,
+                        "unit": "gwei"
+                    }
+                },
+                {
+                    "gasPriceStrategy": "constantGasPrice",
+                    "gasPrice": {
+                        "value": 10,
+                        "unit": "gwei"
+                    }
+                }
+            ]
+        },
+        "maxConcurrency": 100
+    },
+    "rrp": {
+        "endpointId": "0x009d6b53b1429850be54c01f42e00985b38c66c57d4742bcb443ee902ed7b7c8",
+        "oisTitle": "Sepolia Message Root",
+        "endpointName": "SepoliaMessageRoot",
+        "cacheResponses": false
+    },
+    "http": {
+        "endpointId": "0x009d6b53b1429850be54c01f42e00985b38c66c57d4742bcb443ee902ed7b7c8",
+        "oisTitle": "Sepolia Message Root",
+        "endpointName": "SepoliaMessageRoot"
+    },
+    "ois": {
+        "oisFormat": "2.1.0",
+        "title": "Sepolia Message Root",
+        "version": "1.0.0",
+        "apiSpecifications": {
+            "servers": [
+                {
+                    "url": "https://rpc.sepolia.org"
+                }
+            ],
+            "paths": {
+                "/": {
+                    "post": {
+                        "parameters": [
+                            {
+                                "in": "header",
+                                "name": "Content-Type"
+                            },
+                            {
+                                "in": "query",
+                                "name": "method"
+                            },
+                            {
+                                "in": "query",
+                                "name": "id"
+                            },
+                            {
+                                "in": "query",
+                                "name": "jsonrpc"
+                            },
+                            {
+                                "in": "query",
+                                "name": "params"
+                            }
+                        ]
+                    }
+                }
+            },
+            "components": {
+                "securitySchemes": {}
+            },
+            "security": {}
+        },
+        "endpoints": [
+            {
+                "name": "SepoliaMessageRoot",
+                "operation": {
+                    "method": "post",
+                    "path": "/"
+                },
+                "fixedOperationParameters": [
+                    {
+                        "operationParameter": {
+                            "in": "header",
+                            "name": "Content-Type"
+                        },
+                        "value": "application/json"
+                    },
+                    {
+                        "operationParameter": {
+                            "in": "query",
+                            "name": "method"
+                        },
+                        "value": "eth_call"
+                    },
+                    {
+                        "operationParameter": {
+                            "in": "query",
+                            "name": "id"
+                        },
+                        "value": "1"
+                    },
+                    {
+                        "operationParameter": {
+                            "in": "query",
+                            "name": "jsonrpc"
+                        },
+                        "value": "2.0"
+                    },
+                    {
+                        "operationParameter": {
+                            "in": "query",
+                            "name": "params"
+                        },
+                        "value": [
+                            {
+                                "data": "0xa8342087",
+                                "from": "0x00000000005535E6dAdCC963274Dd3a3342D2BBa",
+                                "gas": "0x5b8d80",
+                                "to": "0x00000000005535E6dAdCC963274Dd3a3342D2BBa"
+                            },
+                            "finalized"
+                        ]
+                    }
+                ],
+                "reservedParameters": [
+                    {
+                        "name": "_type",
+                        "fixed": "bytes"
+                    },
+                    {
+                        "name": "_path",
+                        "fixed": "result"
+                    }
+                ],
+                "parameters": []
+            }
+        ]
+    }
+}
