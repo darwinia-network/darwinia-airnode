@@ -270,4 +270,12 @@ npx @api3/airnode-admin derive-endpoint-id \
 npx @api3/airnode-admin derive-endpoint-id \
   --ois-title "Arbitrum Sepolia Message Root" \
   --endpoint-name "ArbitrumSepoliaMessageRoot"
+
+npx @api3/airnode-admin derive-endpoint-id \
+  --ois-title "Sepolia Message Root" \
+  --endpoint-name "SepoliaMessageRoot"
+
+npx @api3/airnode-admin derive-endpoint-id \
+  --ois-title "Ethereum Message Root" \
+  --endpoint-name "EthereumMessageRoot"
 ```
