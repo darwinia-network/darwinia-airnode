@@ -1,46 +1,38 @@
 {
-    "chains": [
-        
-    ],
-    "nodeSettings": {
-        "cloudProvider": {
-            "type": "${CLOUD_PROVIDER}",
-            "region": "${REGION}",
-            "disableConcurrencyReservations": true,
-            "projectId": "${PROJECT_ID}"
-        },
-        "airnodeWalletMnemonic": "${AIRNODE_WALLET_MNEMONIC}",
-        "heartbeat": {
-            "enabled": false
-        },
-        "httpGateway": {
-            "enabled": true,
-            "maxConcurrency": 20,
-            "corsOrigins": []
-        },
-        "httpSignedDataGateway": {
-            "enabled": false
-        },
-        "oevGateway": {
-            "enabled": false
-        },
-        "logFormat": "plain",
-        "logLevel": "DEBUG",
-        "nodeVersion": "0.12.0",
-        "stage": "darwinia-airnode"
+  "chains": [],
+  "nodeSettings": {
+    "cloudProvider": {
+      "type": "${CLOUD_PROVIDER}",
+      "region": "${REGION}",
+      "disableConcurrencyReservations": true,
+      "projectId": "${PROJECT_ID}"
     },
-    "triggers": {
-        "rrp": [
-
-        ],
-        "http": [
-
-        ],
-        "httpSignedData": []
+    "airnodeWalletMnemonic": "${AIRNODE_WALLET_MNEMONIC}",
+    "heartbeat": {
+      "enabled": false
     },
-    "templates": [],
-    "ois": [
-        
-    ],
-    "apiCredentials": []
+    "httpGateway": {
+      "enabled": true,
+      "maxConcurrency": 20,
+      "corsOrigins": []
+    },
+    "httpSignedDataGateway": {
+      "enabled": false
+    },
+    "oevGateway": {
+      "enabled": false
+    },
+    "logFormat": "plain",
+    "logLevel": "DEBUG",
+    "nodeVersion": "0.12.0",
+    "stage": "darwinia-airnode"
+  },
+  "triggers": {
+    "rrp": [],
+    "http": [],
+    "httpSignedData": []
+  },
+  "templates": [],
+  "ois": [],
+  "apiCredentials": []
 }

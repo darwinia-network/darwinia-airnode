@@ -37,7 +37,7 @@ function handleConfig(chains) {
       continue;
     }
     render(dataDestTemplateConfig, chainData);
-    console.log(`render ${chain}`);
+    console.log(`Loading: ${chain}`);
   }
   return dataDestTemplateConfig;
 }
@@ -75,14 +75,22 @@ function handleEnv(config) {
 
 function main() {
   const argv = process.argv;
-  const args = argv.splice(2, argv.length);
+  let args = argv.splice(2, argv.length);
+  if (args.length == 0) {
+    args = [
+      // mainnet
+      "arbitrum", "darwinia",
+      // testnet
+      "arbitrum-sepolia", "crab"
+    ];
+  }
   const config = handleConfig(args);
   handleEnv(config);
 
   const destConfigFile = path.resolve(_workPath, 'config.json');
   const dataDestConfig = JSON.stringify(config, null, 2);
   fs.writeFileSync(destConfigFile, dataDestConfig);
-  console.log('done');
+  console.log('Configuration loaded successfully.');
 }
 
 main();

@@ -1,58 +1,56 @@
 {
     "chain": {
         "authorizers": {
-            "authorizers": {
-                "requesterEndpointAuthorizers": [],
-                "crossChainRequesterAuthorizers": [],
-                "requesterAuthorizersWithErc721": [],
-                "crossChainRequesterAuthorizersWithErc721": []
-            },
-            "authorizations": {
-                "requesterEndpointAuthorizations": {}
-            },
-            "contracts": {
-                "AirnodeRrp": "0xa0AD79D995DdeeB18a14eAef56A549A04e3Aa1Bd",
-                "AirnodeRrpDryRun": "0x2e768206bf5112e7D7efAf1d9df614C26475193f"
-            },
-            "id": "44",
-            "providers": {
-                "dwellirHostedCrab": {
-                    "url": "https://darwiniacrab-rpc.dwellir.com"
-                }
-            },
-            "type": "evm",
-            "options": {
-                "gasPriceOracle": [
-                    {
-                        "gasPriceStrategy": "latestBlockPercentileGasPrice",
-                        "percentile": 60,
-                        "minTransactionCount": 20,
-                        "pastToCompareInBlocks": 20,
-                        "maxDeviationMultiplier": 2
-                    },
-                    {
-                        "gasPriceStrategy": "providerRecommendedGasPrice",
-                        "recommendedGasPriceMultiplier": 1.2
-                    },
-                    {
-                        "gasPriceStrategy": "providerRecommendedEip1559GasPrice",
-                        "baseFeeMultiplier": 2,
-                        "priorityFee": {
-                            "value": 3.12,
-                            "unit": "gwei"
-                        }
-                    },
-                    {
-                        "gasPriceStrategy": "constantGasPrice",
-                        "gasPrice": {
-                            "value": 10,
-                            "unit": "gwei"
-                        }
+            "requesterEndpointAuthorizers": [],
+            "crossChainRequesterAuthorizers": [],
+            "requesterAuthorizersWithErc721": [],
+            "crossChainRequesterAuthorizersWithErc721": []
+        },
+        "authorizations": {
+            "requesterEndpointAuthorizations": {}
+        },
+        "contracts": {
+            "AirnodeRrp": "0xa0AD79D995DdeeB18a14eAef56A549A04e3Aa1Bd",
+            "AirnodeRrpDryRun": "0x2e768206bf5112e7D7efAf1d9df614C26475193f"
+        },
+        "id": "44",
+        "providers": {
+            "dwellirHostedCrab": {
+                "url": "https://darwiniacrab-rpc.dwellir.com"
+            }
+        },
+        "type": "evm",
+        "options": {
+            "gasPriceOracle": [
+                {
+                    "gasPriceStrategy": "latestBlockPercentileGasPrice",
+                    "percentile": 60,
+                    "minTransactionCount": 20,
+                    "pastToCompareInBlocks": 20,
+                    "maxDeviationMultiplier": 2
+                },
+                {
+                    "gasPriceStrategy": "providerRecommendedGasPrice",
+                    "recommendedGasPriceMultiplier": 1.2
+                },
+                {
+                    "gasPriceStrategy": "providerRecommendedEip1559GasPrice",
+                    "baseFeeMultiplier": 2,
+                    "priorityFee": {
+                        "value": 3.12,
+                        "unit": "gwei"
                     }
-                ]
-            },
-            "maxConcurrency": 100
-        }
+                },
+                {
+                    "gasPriceStrategy": "constantGasPrice",
+                    "gasPrice": {
+                        "value": 10,
+                        "unit": "gwei"
+                    }
+                }
+            ]
+        },
+        "maxConcurrency": 100
     },
     "rrp": {
         "endpointId": "0xbd452be65dba2428924ea35129292b3247233952dae361d169f2d489d805ce23",
