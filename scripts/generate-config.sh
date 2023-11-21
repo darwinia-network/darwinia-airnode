@@ -11,7 +11,7 @@ SECRETS_ENV=${WORK_PATH}/secrets.env
 
 find_json_files(){
   for FILE in $(find ${WORK_PATH}/networks -type f -name "*.json"); do
-    if [ -f $1"/"$FILE ]; then
+    if [ -f $FILE ]; then
       echo $(basename "${FILE}" .json)
     fi
   done
