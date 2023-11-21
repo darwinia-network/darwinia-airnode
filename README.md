@@ -210,14 +210,20 @@ npx @api3/airnode-admin sponsor-requester \
 npx @api3/airnode-admin sponsor-requester \
  --providerUrl https://sepolia-rollup.arbitrum.io/rpc \
  --sponsor-mnemonic "${PRIVATE_MNEMONIC}" \
- --requester-address 0x00000000007317c91F57D86A410934A490E62E1E \
+ --requester-address 0x00000000096c285629Fe3EAb3dd042c27b9dcBa6 \
  --airnode-rrp-address 0xa0AD79D995DdeeB18a14eAef56A549A04e3Aa1Bd
 
 npx @api3/airnode-admin sponsor-requester \
  --providerUrl https://darwiniacrab-rpc.dwellir.com \
  --sponsor-mnemonic "${PRIVATE_MNEMONIC}" \
- --requester-address 0x00000000007317c91F57D86A410934A490E62E1E \
+ --requester-address 0x00000000096c285629Fe3EAb3dd042c27b9dcBa6 \
  --airnode-rrp-address 0xa0AD79D995DdeeB18a14eAef56A549A04e3Aa1Bd
+
+ npx @api3/airnode-admin sponsor-requester \
+ --providerUrl https://rpc.sepolia.org \
+ --sponsor-mnemonic "${PRIVATE_MNEMONIC}" \
+ --requester-address 0x00000000096c285629Fe3EAb3dd042c27b9dcBa6 \
+ --airnode-rrp-address 0x2ab9f26E18B64848cd349582ca3B55c2d06f507d
 ```
 
 > Requester address 0x1234... is now sponsored by 0x456...
