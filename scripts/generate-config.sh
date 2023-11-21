@@ -9,7 +9,17 @@ FILE_DEST_CONFIG_TEMPLATE=${WORK_PATH}/config.json.template
 FILE_DEST_CONFIG_STORE=${WORK_PATH}/config.json
 SECRETS_ENV=${WORK_PATH}/secrets.env
 
-INPUT_CHAINS=${@:-'arbitrum darwinia arbitrum-sepolia crab sepolia'}
+find_json_files() {
+    local file_names=()
+    while IFS= read -r file; do
+        file_name=$(basename "$file" .json)
+        file_names+=("$file_name")
+    done < <(find networks -type f -name "*.json")
+
+    echo "${file_names[@]}"
+}
+
+INPUT_CHAINS=$(find_json_files)
 
 
 if [ ! -f ${SECRETS_ENV} ]; then
@@ -41,7 +51,7 @@ handle_config() {
     cat <<< $(jq ".chains += [${NW_CHAIN}]" ${FILE_DEST_CONFIG_STORE}) > ${FILE_DEST_CONFIG_STORE}
     cat <<< $(jq ".triggers.rrp += [${NW_RRP}]" ${FILE_DEST_CONFIG_STORE}) > ${FILE_DEST_CONFIG_STORE}
     cat <<< $(jq ".triggers.http += [${NW_HTTP}]" ${FILE_DEST_CONFIG_STORE}) > ${FILE_DEST_CONFIG_STORE}
-    cat <<< $(jq ".triggers.ois += [${NW_OIS}]" ${FILE_DEST_CONFIG_STORE}) > ${FILE_DEST_CONFIG_STORE}
+    cat <<< $(jq ".ois += [${NW_OIS}]" ${FILE_DEST_CONFIG_STORE}) > ${FILE_DEST_CONFIG_STORE}
     echo "handle config for ${CHAIN}"
   done
 }
