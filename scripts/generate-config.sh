@@ -9,17 +9,15 @@ FILE_DEST_CONFIG_TEMPLATE=${WORK_PATH}/config.json.template
 FILE_DEST_CONFIG_STORE=${WORK_PATH}/config.json
 SECRETS_ENV=${WORK_PATH}/secrets.env
 
-find_json_files() {
-    local file_names=()
-    while IFS= read -r file; do
-        file_name=$(basename "$file" .json)
-        file_names+=("$file_name")
-    done < <(find networks -type f -name "*.json")
-
-    echo "${file_names[@]}"
+find_json_files(){
+  for FILE in $(find ${WORK_PATH}/networks -type f -name "*.json"); do
+    if [ -f $1"/"$FILE ]; then
+      echo $(basename "${FILE}" .json)
+    fi
+  done
 }
 
-INPUT_CHAINS=$(find_json_files)
+INPUT_CHAINS=${@:-$(find_json_files)}
 
 
 if [ ! -f ${SECRETS_ENV} ]; then
