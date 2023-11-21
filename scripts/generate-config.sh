@@ -11,7 +11,7 @@ SECRETS_ENV=${WORK_PATH}/secrets.env
 
 find_json_files(){
   for FILE in $(find ${WORK_PATH}/networks -type f -name "*.json"); do
-    if [ -f $FILE ]; then
+    if [[ -f $FILE ]]; then
       echo $(basename "${FILE}" .json)
     fi
   done
@@ -20,7 +20,7 @@ find_json_files(){
 INPUT_CHAINS=${@:-$(find_json_files)}
 
 
-if [ ! -f ${SECRETS_ENV} ]; then
+if [[ ! -f ${SECRETS_ENV} ]]; then
   echo 'missing secrets.env file'
   exit 1
 fi
