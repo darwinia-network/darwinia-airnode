@@ -16,7 +16,7 @@
         "id": "11155111",
         "providers": {
             "Sepolia": {
-                "url": "https://rpc.sepolia.org"
+                "url": "https://ethereum-sepolia.publicnode.com"
             }
         },
         "type": "evm",
@@ -70,7 +70,7 @@
         "apiSpecifications": {
             "servers": [
                 {
-                    "url": "https://rpc.sepolia.org"
+                    "url": "https://ethereum-sepolia.publicnode.com"
                 }
             ],
             "paths": {
