@@ -15,8 +15,8 @@
         },
         "id": "44",
         "providers": {
-            "dwellirHostedCrab": {
-                "url": "https://darwiniacrab-rpc.dwellir.com"
+            "darwiniaHostedCrab": {
+                "url": "https://crab-rpc.darwinia.network"
             }
         },
         "type": "evm",
@@ -70,7 +70,7 @@
         "apiSpecifications": {
             "servers": [
                 {
-                    "url": "https://darwiniacrab-rpc.dwellir.com"
+                    "url": "https://crab-rpc.darwinia.network"
                 }
             ],
             "paths": {
