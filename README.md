@@ -1,4 +1,6 @@
-# Darwinia Airnode
+# SubAPI Airnode config
+
+This is an airnode config for subAPI to retrieve message root and submit them to contract. [More about airnode](https://docs.api3.org/reference/airnode/latest/understand/)
 
 ## How to use this config
 
