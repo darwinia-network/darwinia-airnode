@@ -286,4 +286,8 @@ npx @api3/airnode-admin derive-endpoint-id \
 npx @api3/airnode-admin derive-endpoint-id \
   --ois-title "Ethereum Message Root" \
   --endpoint-name "EthereumMessageRoot"
+
+npx @api3/airnode-admin derive-endpoint-id \
+  --ois-title "Tron Shasta Message Root" \
+  --endpoint-name "TronShastaMessageRoot"
 ```

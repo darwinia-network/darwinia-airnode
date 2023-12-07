@@ -10,6 +10,11 @@ FILE_DEST_CONFIG_STORE=${WORK_PATH}/config.json
 SECRETS_ENV=${WORK_PATH}/secrets.env
 
 find_json_files(){
+  # todo remove this after testing
+  echo "tron-shasta"
+  # echo "crab"
+  return
+
   for FILE in $(find ${WORK_PATH}/networks -type f -name "*.json"); do
     if [[ -f $FILE ]]; then
       echo $(basename "${FILE}" .json)
