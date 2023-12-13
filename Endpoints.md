@@ -37,3 +37,4 @@
 | Crab | 0xa0AD79D995DdeeB18a14eAef56A549A04e3Aa1Bd   |
 | ArbitrumSepolia | 0xa0AD79D995DdeeB18a14eAef56A549A04e3Aa1Bd   |
 | Sepolia | 0x2ab9f26E18B64848cd349582ca3B55c2d06f507d   |
+| TronShasta | TJMBeSv6tw1mp6igm8sY2gEthoMUDbFpdX   |
